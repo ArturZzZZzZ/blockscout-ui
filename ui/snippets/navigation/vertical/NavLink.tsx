@@ -42,6 +42,7 @@ const NavLink = ({ item, onClick, isCollapsed, isDisabled }: Props) => {
       href={ href }
       target={ isInternalLink ? '_self' : '_blank' }
       { ...styleProps.itemProps }
+      bg={ isInternalLink && item.isActive ? '#132B29' : colors.bg.default }
       w={{ base: '100%', lg: isExpanded ? '100%' : '60px', xl: isCollapsed ? '60px' : '100%' }}
       display="flex"
       position="relative"
