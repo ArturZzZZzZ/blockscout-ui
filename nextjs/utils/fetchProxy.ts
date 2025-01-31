@@ -21,13 +21,13 @@ export default function fetchFactory(
       accept: _req.headers['accept'] || 'application/json',
       'content-type': _req.headers['content-type'] || 'application/json',
       cookie: apiToken ? `${ cookies.NAMES.API_TOKEN }=${ apiToken }` : '',
-      ...pick(_req.headers, [
+      ...(pick(_req.headers, [
         'x-csrf-token',
         'Authorization', // the old value, just in case
         'authorization', // Node.js automatically lowercases headers
         // feature flags
-        'updated-gas-oracle',
-      ]) as Record<string, string | undefined>,
+        // 'updated-gas-oracle',
+      ]) as Record<string, string | undefined>),
     };
 
     httpLogger.logger.info({

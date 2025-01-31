@@ -716,7 +716,7 @@ export const RESOURCES = {
   stats: {
     path: '/api/v2/stats',
     headers: {
-      'updated-gas-oracle': 'true',
+      // 'updated-gas-oracle': 'false',
     },
   },
   stats_charts_txs: {
