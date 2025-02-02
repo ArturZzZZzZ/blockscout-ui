@@ -60,6 +60,7 @@ const Link = chakra(({ isLoading, children, isExternal, onClick, href, noLink }:
     display: 'inline-flex',
     alignItems: 'center',
     minWidth: 0, // for content truncation - https://css-tricks.com/flexbox-truncated-text/
+    color: 'green.500',
   };
 
   if (noLink) {
@@ -88,7 +89,7 @@ interface EntityIconProps extends Pick<IconProps, 'color' | 'borderRadius' | 'ma
 export interface IconBaseProps extends Pick<EntityBaseProps, 'isLoading' | 'noIcon'>, EntityIconProps {}
 
 const Icon = ({ isLoading, noIcon, size, name, color, borderRadius, marginRight, boxSize }: IconBaseProps) => {
-  const defaultColor = useColorModeValue('gray.500', 'gray.400');
+  const defaultColor = useColorModeValue('gray.500', 'white');
 
   if (noIcon || !name) {
     return null;
