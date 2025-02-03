@@ -27,6 +27,31 @@ const variantSubtle = defineStyle((props) => {
     };
   }
 
+  if (c === 'blue') {
+    return {
+      bg: mode('blue.50', 'gray.1300')(props),
+      color: mode('blackAlpha.800', 'blue.1000')(props),
+    };
+  }
+  if (c === 'orange') {
+    return {
+      bg: mode('blue.50', 'gray.1300')(props),
+      color: mode('blackAlpha.800', 'orange.200')(props),
+    };
+  }
+  if (c === 'green') {
+    return {
+      bg: mode('blue.50', 'gray.1300')(props),
+      color: mode('blackAlpha.800', 'green.500')(props),
+    };
+  }
+  if (c === 'red') {
+    return {
+      bg: mode('blue.50', 'gray.1300')(props),
+      color: mode('blackAlpha.800', 'red.200')(props),
+    };
+  }
+
   if (c === 'black-blue') {
     return {
       bg: mode('blue.50', 'blue.800')(props),

@@ -33,11 +33,11 @@ const TxType = ({ types, isLoading }: Props) => {
       break;
     case 'blob_transaction':
       label = 'Blob txn';
-      colorScheme = 'yellow';
+      colorScheme = 'orange';
       break;
     case 'contract_creation':
       label = 'Contract creation';
-      colorScheme = 'blue';
+      colorScheme = 'orange';
       break;
     case 'token_transfer':
       label = 'Token transfer';
@@ -53,15 +53,15 @@ const TxType = ({ types, isLoading }: Props) => {
       break;
     case 'rootstock_remasc':
       label = 'REMASC';
-      colorScheme = 'blue';
+      colorScheme = 'orange';
       break;
     case 'rootstock_bridge':
       label = 'Bridge';
-      colorScheme = 'blue';
+      colorScheme = 'orange';
       break;
     default:
       label = 'Transaction';
-      colorScheme = 'purple';
+      colorScheme = 'orange';
 
   }
 
