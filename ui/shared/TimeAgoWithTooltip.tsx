@@ -20,8 +20,8 @@ const TimeAgoWithTooltip = ({ timestamp, fallbackText, isLoading, enableIncremen
   }
 
   const content = timestamp ?
-    <Tooltip label={ dayjs(timestamp).format('llll') }><span>{ timeAgo }</span></Tooltip> :
-    <span>{ fallbackText }</span>;
+    <Tooltip label={ dayjs(timestamp).format('llll') }><chakra.span color="gray.1000">{ timeAgo }</chakra.span></Tooltip> :
+    <span >{ fallbackText }</span>;
 
   return (
     <Skeleton isLoaded={ !isLoading } className={ className }>

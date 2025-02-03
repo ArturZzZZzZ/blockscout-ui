@@ -26,12 +26,12 @@ const variants = {
 };
 
 const baseStyle = defineStyle((props) => {
-  const bg = mode('gray.700', 'gray.200')(props);
-  const fg = mode('white', 'black')(props);
+  const bg = mode('gray.700', 'white')(props);
+  const fg = mode('white', 'gray.1200')(props);
 
   return {
-    bg: $bg.reference,
-    color: $fg.reference,
+    bg: bg,
+    color: fg,
     [$bg.variable]: `colors.${ bg }`,
     [$fg.variable]: `colors.${ fg }`,
     [$arrowBg.variable]: $bg.reference,
