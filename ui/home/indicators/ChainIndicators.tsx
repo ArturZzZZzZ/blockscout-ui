@@ -39,7 +39,7 @@ const ChainIndicators = () => {
     },
   });
 
-  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.100');
+  const bgColor = useColorModeValue('gray.50', 'gray.1200');
 
   if (indicators.length === 0) {
     return null;
