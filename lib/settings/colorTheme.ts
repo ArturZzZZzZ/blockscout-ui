@@ -12,13 +12,6 @@ interface ColorTheme {
 
 export const COLOR_THEMES: Array<ColorTheme> = [
   {
-    id: 'dubl2',
-    label: 'Dubl2',
-    colorMode: 'dark',
-    hex: '#000000',
-    sampleBg: 'linear-gradient(161deg, #000 9.37%, #383838 92.52%)',
-  },
-  {
     id: 'light',
     label: 'Light',
     colorMode: 'light',
@@ -43,7 +36,7 @@ export const COLOR_THEMES: Array<ColorTheme> = [
     id: 'dark',
     label: 'Dark',
     colorMode: 'dark',
-    hex: '#101112',
+    hex: '#000000',
     sampleBg: 'linear-gradient(161deg, #000 9.37%, #383838 92.52%)',
   },
 ];
