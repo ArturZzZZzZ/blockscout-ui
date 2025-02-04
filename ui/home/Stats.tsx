@@ -109,7 +109,7 @@ const Stats = () => {
       },
       {
         id: 'total_blocks' as const,
-        icon: 'block_slim' as const,
+        icon: 'earth' as const,
         label: 'Total blocks',
         value: Number(data.total_blocks).toLocaleString(),
         href: { pathname: '/blocks' as const },
@@ -124,7 +124,7 @@ const Stats = () => {
       },
       {
         id: 'total_txs' as const,
-        icon: 'transactions_slim' as const,
+        icon: 'swap_icon' as const,
         label: 'Total transactions',
         value: Number(data.total_transactions).toLocaleString(),
         href: { pathname: '/txs' as const },
