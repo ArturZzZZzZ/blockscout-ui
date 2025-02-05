@@ -88,6 +88,7 @@ export const Desktop = ({ ...props }: Props) => {
       w="100%"
       mx={ props.isLoading ? 4 : 0 }
       my={ props.isLoading ? '6px' : 0 }
+      color="white"
       { ...props }
     >
       { ({ content }) => <Tr><Td colSpan={ 100 } p={ 0 } _first={{ p: 0 }} _last={{ p: 0 }}>{ content }</Td></Tr> }
