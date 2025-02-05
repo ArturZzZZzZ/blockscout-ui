@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text, Link, Box, Tooltip } from '@chakra-ui/react';
+import { Grid, GridItem, Text, Link, Box, Tooltip, chakra } from '@chakra-ui/react';
 import BigNumber from 'bignumber.js';
 import { capitalize } from 'es-toolkit';
 import { useRouter } from 'next/router';
@@ -96,13 +96,13 @@ const BlockDetails = ({ query }: Props) => {
     return (
       <Text variant="secondary" whiteSpace="break-spaces">
         <Tooltip label="Static block reward">
-          <span>{ staticReward.dividedBy(WEI).toFixed() }</span>
+          <chakra.span color="gray.1000">{ staticReward.dividedBy(WEI).toFixed() }</chakra.span>
         </Tooltip>
         { !txFees.isEqualTo(ZERO) && (
           <>
             { space }+{ space }
             <Tooltip label="Txn fees">
-              <span>{ txFees.dividedBy(WEI).toFixed() }</span>
+              <chakra.span color="gray.1000">{ txFees.dividedBy(WEI).toFixed() }</chakra.span>
             </Tooltip>
           </>
         ) }
@@ -110,7 +110,7 @@ const BlockDetails = ({ query }: Props) => {
           <>
             { space }-{ space }
             <Tooltip label="Burnt fees">
-              <span>{ burntFees.dividedBy(WEI).toFixed() }</span>
+              <chakra.span color="gray.1000">{ burntFees.dividedBy(WEI).toFixed() }</chakra.span>
             </Tooltip>
           </>
         ) }
@@ -122,7 +122,7 @@ const BlockDetails = ({ query }: Props) => {
 
   const txsNum = (() => {
     const blockTxsNum = (
-      <LinkInternal href={ route({ pathname: '/block/[height_or_hash]', query: { height_or_hash: heightOrHash, tab: 'txs' } }) }>
+      <LinkInternal href={ route({ pathname: '/block/[height_or_hash]', query: { height_or_hash: heightOrHash, tab: 'txs' } }) } color="green.500">
         { data.transaction_count } txn{ data.transaction_count === 1 ? '' : 's' }
       </LinkInternal>
     );
@@ -130,7 +130,7 @@ const BlockDetails = ({ query }: Props) => {
     const blockBlobTxsNum = (config.features.dataAvailability.isEnabled && data.blob_transaction_count) ? (
       <>
         <span> including </span>
-        <LinkInternal href={ route({ pathname: '/block/[height_or_hash]', query: { height_or_hash: heightOrHash, tab: 'blob_txs' } }) }>
+        <LinkInternal href={ route({ pathname: '/block/[height_or_hash]', query: { height_or_hash: heightOrHash, tab: 'blob_txs' } }) } color="green.500">
           { data.blob_transaction_count } blob txn{ data.blob_transaction_count === 1 ? '' : 's' }
         </LinkInternal>
       </>
@@ -280,7 +280,8 @@ const BlockDetails = ({ query }: Props) => {
           </DetailsInfoItem.Label>
           <DetailsInfoItem.Value>
             <Skeleton isLoaded={ !isPlaceholderData }>
-              <LinkInternal href={ route({ pathname: '/block/[height_or_hash]', query: { height_or_hash: heightOrHash, tab: 'withdrawals' } }) }>
+              <LinkInternal
+                color="green.500" href={ route({ pathname: '/block/[height_or_hash]', query: { height_or_hash: heightOrHash, tab: 'withdrawals' } }) }>
                 { data.withdrawals_count } withdrawal{ data.withdrawals_count === 1 ? '' : 's' }
               </LinkInternal>
             </Skeleton>
@@ -498,7 +499,7 @@ const BlockDetails = ({ query }: Props) => {
             ) : (
               <>
                 <Text>{ BigNumber(data.base_fee_per_gas).dividedBy(WEI).toFixed() } { currencyUnits.ether } </Text>
-                <Text variant="secondary" whiteSpace="pre">
+                <Text color="gray.1000" whiteSpace="pre">
                   { space }({ BigNumber(data.base_fee_per_gas).dividedBy(WEI_IN_GWEI).toFixed() } { currencyUnits.gwei })
                 </Text>
               </>
@@ -519,7 +520,7 @@ const BlockDetails = ({ query }: Props) => {
             Burnt fees
           </DetailsInfoItem.Label>
           <DetailsInfoItem.Value>
-            <IconSvg name="flame" boxSize={ 5 } color="gray.500" isLoading={ isPlaceholderData }/>
+            <IconSvg name="flame" boxSize={ 5 } color="white" isLoading={ isPlaceholderData }/>
             <Skeleton isLoaded={ !isPlaceholderData } ml={ 2 }>
               { burntFees.dividedBy(WEI).toFixed() } { currencyUnits.ether }
             </Skeleton>
@@ -560,9 +561,10 @@ const BlockDetails = ({ query }: Props) => {
           <Skeleton isLoaded={ !isPlaceholderData } mt={ 6 } display="inline-block">
             <Link
               fontSize="sm"
-              textDecorationLine="underline"
-              textDecorationStyle="dashed"
+              // textDecorationLine="underline"
+              // textDecorationStyle="dashed"
               onClick={ handleCutClick }
+              color="green.500"
             >
               { isExpanded ? 'Hide details' : 'View details' }
             </Link>
@@ -702,6 +704,7 @@ const BlockDetails = ({ query }: Props) => {
                   href={ route({ pathname: '/block/[height_or_hash]', query: { height_or_hash: String(data.height - 1) } }) }
                   overflow="hidden"
                   whiteSpace="nowrap"
+                  color="green.500"
                 >
                   <HashStringShortenDynamic
                     hash={ data.parent_hash }

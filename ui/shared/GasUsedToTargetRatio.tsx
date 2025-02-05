@@ -11,7 +11,7 @@ type Props = {
 const GasUsedToTargetRatio = ({ value, isLoading }: Props) => {
   return (
     <Tooltip label="% of Gas Target">
-      <Skeleton color="text_secondary" isLoaded={ !isLoading }>
+      <Skeleton color="gray.1000" isLoaded={ !isLoading }>
         <span>{ (value > 0 ? '+' : '') + value.toLocaleString(undefined, { maximumFractionDigits: 2 }) }%</span>
       </Skeleton>
     </Tooltip>

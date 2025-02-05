@@ -44,12 +44,12 @@ const BackLink = (props: BackLinkProp & { isLoading?: boolean }) => {
     );
   }
 
-  const icon = <IconSvg name="arrows/east" boxSize={ 6 } transform="rotate(180deg)" margin="auto" color="gray.400" flexShrink={ 0 }/>;
+  const icon = <IconSvg name="arrows/east" boxSize={ 6 } transform="rotate(180deg)" margin="auto" color="white" flexShrink={ 0 }/>;
 
   if ('url' in props) {
     return (
       <Tooltip label={ props.label }>
-        <LinkInternal display="inline-flex" href={ props.url } h="40px" mr={ 3 }>
+        <LinkInternal display="inline-flex" href={ props.url } boxSize="40px" mr={ 3 } bg="gray.1200" borderRadius="full">
           { icon }
         </LinkInternal>
       </Tooltip>
