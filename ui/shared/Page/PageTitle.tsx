@@ -142,6 +142,8 @@ const PageTitle = ({ title, contentAfter, withTextAd, backLink, className, isLoa
                 onMouseEnter={ tooltip.onOpen }
                 onMouseLeave={ tooltip.onClose }
                 onClick={ isMobile ? tooltip.onToggle : undefined }
+                color="white"
+                fontWeight="400"
               >
                 <span ref={ textRef }>
                   { title }
