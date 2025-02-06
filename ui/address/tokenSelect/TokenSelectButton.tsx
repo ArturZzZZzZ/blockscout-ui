@@ -47,7 +47,7 @@ const TokenSelectButton = ({ isOpen, isLoading, onClick, data }: Props, ref: Rea
         <chakra.span fontWeight={ 600 }>{ prefix }{ num }</chakra.span>
         <chakra.span
           whiteSpace="pre"
-          color="text_secondary"
+          color="white"
           fontWeight={ 400 }
           maxW={{ base: 'calc(100vw - 230px)', lg: '500px' }}
           overflow="hidden"
