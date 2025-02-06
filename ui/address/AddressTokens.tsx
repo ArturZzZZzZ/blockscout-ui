@@ -173,7 +173,6 @@ const AddressTokens = ({ shouldRender = true, isQueryEnabled = true }: Props) =>
       <Box ref={ scrollRef }></Box>
       <RoutedTabs
         tabs={ tabs }
-        variant="outline"
         colorScheme="gray"
         size="sm"
         tabListProps={ isMobile ? TAB_LIST_PROPS_MOBILE : TAB_LIST_PROPS }

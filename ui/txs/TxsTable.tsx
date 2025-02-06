@@ -58,9 +58,9 @@ const TxsTable = ({
             <Th width="20%">Method</Th>
             { showBlockInfo && (
               <Th width="18%">
-                <Link onClick={ isLoading ? undefined : sort('block_number') } display="flex" alignItems="center">
-                  { sorting === 'block_number-asc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(-90deg)"/> }
-                  { sorting === 'block_number-desc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(90deg)"/> }
+                <Link onClick={ isLoading ? undefined : sort('block_number') } display="flex" alignItems="center" color="green.500">
+                  { sorting === 'block_number-asc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(-90deg)" color="green.500"/> }
+                  { sorting === 'block_number-desc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(90deg)" color="green.500"/> }
                   Block
                 </Link>
               </Th>

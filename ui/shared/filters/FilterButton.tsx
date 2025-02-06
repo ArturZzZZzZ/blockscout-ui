@@ -38,10 +38,11 @@ const FilterButton = ({ isActive, isLoading, appliedFiltersNum, onClick, as }: P
     <Button
       ref={ ref }
       rightIcon={ appliedFiltersNum ? num : undefined }
+      border="none"
       size="sm"
       fontWeight="500"
       variant="outline"
-      colorScheme="gray"
+      color="green.500"
       onClick={ onClick }
       isActive={ isActive }
       data-selected={ Boolean(appliedFiltersNum) }

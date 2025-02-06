@@ -46,7 +46,7 @@ const colors = {
     '1300': '#383838B8',
     '1400': '#383838',
   },
-  black: '#101112',
+  black: '#000',
   white: '#ffffff',
   blackAlpha: {
     '50': 'RGBA(16, 17, 18, 0.04)',
