@@ -8,7 +8,7 @@ import type { ContentProps } from './AddressEntity';
 import AddressEntity from './AddressEntity';
 
 const AddressEntityContentProxy = (props: ContentProps) => {
-  const bgColor = useColorModeValue('gray.700', 'gray.900');
+  const bgColor = useColorModeValue('gray.700', 'white');
 
   const implementations = props.address.implementations;
 
@@ -41,12 +41,13 @@ const AddressEntityContentProxy = (props: ContentProps) => {
         <DarkMode>
           <PopoverContent bgColor={ bgColor } w="fit-content" borderRadius="sm" maxW={{ base: '100vw', lg: '410px' }} onClick={ handleClick }>
             <PopoverArrow bgColor={ bgColor }/>
-            <PopoverBody color="white" p={ 2 } fontSize="sm" lineHeight={ 5 } textAlign="center">
+            <PopoverBody color="black" p={ 2 } fontSize="sm" lineHeight={ 5 }>
               <Box fontWeight={ 600 }>
                 Proxy contract
                 { props.address.name ? ` (${ props.address.name })` : '' }
               </Box>
-              <AddressEntity address={{ hash: props.address.hash, filecoin: props.address.filecoin }} noLink noIcon noHighlight justifyContent="center"/>
+              <AddressEntity address={{ hash: props.address.hash, filecoin: props.address.filecoin }} noLink noIcon noHighlight justifyContent="center"
+                className="gray-tooltip"/>
               <Box fontWeight={ 600 } mt={ 2 }>
                 Implementation{ implementations.length > 1 ? 's' : '' }
                 { implementationName ? ` (${ implementationName })` : '' }
@@ -62,6 +63,7 @@ const AddressEntityContentProxy = (props: ContentProps) => {
                     minW={ `calc((100% - ${ colNum - 1 } * 12px) / ${ colNum })` }
                     flex={ 1 }
                     justifyContent={ colNum === 1 ? 'center' : undefined }
+                    className="gray-tooltip"
                   />
                 )) }
               </Flex>

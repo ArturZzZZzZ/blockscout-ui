@@ -68,18 +68,18 @@ const TxsTable = ({
             <Th width="224px">From/To</Th>
             { !config.UI.views.tx.hiddenFields?.value && (
               <Th width="20%" isNumeric>
-                <Link onClick={ isLoading ? undefined : sort('value') } display="flex" alignItems="center" justifyContent="end">
-                  { sorting === 'value-asc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(-90deg)"/> }
-                  { sorting === 'value-desc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(90deg)"/> }
+                <Link onClick={ isLoading ? undefined : sort('value') } display="flex" alignItems="center" justifyContent="end" color="green.500">
+                  { sorting === 'value-asc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(-90deg)" color="green.500"/> }
+                  { sorting === 'value-desc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(90deg)" color="green.500"/> }
                   { `Value ${ currencyUnits.ether }` }
                 </Link>
               </Th>
             ) }
             { !config.UI.views.tx.hiddenFields?.tx_fee && (
               <Th width="20%" isNumeric pr={ 5 }>
-                <Link onClick={ isLoading ? undefined : sort('fee') } display="flex" alignItems="center" justifyContent="end">
-                  { sorting === 'fee-asc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(-90deg)"/> }
-                  { sorting === 'fee-desc' && <IconSvg boxSize={ 5 } name="arrows/east" transform="rotate(90deg)"/> }
+                <Link onClick={ isLoading ? undefined : sort('fee') } display="flex" alignItems="center" justifyContent="end" color="green.500">
+                  { sorting === 'fee-asc' && <IconSvg color="green.500" boxSize={ 5 } name="arrows/east" transform="rotate(-90deg)"/> }
+                  { sorting === 'fee-desc' && <IconSvg color="green.500" boxSize={ 5 } name="arrows/east" transform="rotate(90deg)"/> }
                   { `Fee${ feeCurrency }` }
                 </Link>
               </Th>

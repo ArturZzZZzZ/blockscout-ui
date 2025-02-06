@@ -44,6 +44,7 @@ const AddressFromTo = ({ from, to, current, mode: modeProp, className, isLoading
             isLoading={ isLoading }
             type={ getTxCourseType(from.hash, to?.hash, current) }
             transform="rotate(90deg)"
+            color="gray.1000"
           />
           <Entity
             address={ from }
@@ -93,6 +94,7 @@ const AddressFromTo = ({ from, to, current, mode: modeProp, className, isLoading
       <AddressFromToIcon
         isLoading={ isLoading }
         type={ getTxCourseType(from.hash, to?.hash, current) }
+        color="gray.1000"
       />
       { to && (
         <Entity
