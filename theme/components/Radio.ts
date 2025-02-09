@@ -19,6 +19,12 @@ const baseStyleContainer = defineStyle({
 const baseStyle = definePartsStyle({
   label: baseStyleLabel,
   container: baseStyleContainer,
+  control: {
+    _checked: {
+      bg: 'green.500',
+      borderColor: 'green.500',
+    },
+  },
 });
 
 const sizes = {

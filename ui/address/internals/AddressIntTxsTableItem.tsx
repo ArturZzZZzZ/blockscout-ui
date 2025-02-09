@@ -58,7 +58,7 @@ const AddressIntTxsTableItem = ({
         <Flex rowGap={ 2 } flexWrap="wrap">
           { typeTitle && (
             <Box w="126px" display="inline-block">
-              <Tag colorScheme="cyan" mr={ 5 } isLoading={ isLoading }>{ typeTitle }</Tag>
+              <Tag colorScheme="blue" mr={ 5 } isLoading={ isLoading }>{ typeTitle }</Tag>
             </Box>
           ) }
           <TxStatus status={ success ? 'ok' : 'error' } errorText={ error } isLoading={ isLoading }/>
