@@ -18,6 +18,7 @@ type Props<
   Name extends Path<FormFields>,
 > = Omit<FormFieldPropsBase<FormFields, Name>, 'bgColor' | 'size'> & Partial<FancySelectProps> & {
   size?: 'md' | 'lg';
+  label?: React.ReactNode;
 };
 
 const FormFieldFancySelect = <

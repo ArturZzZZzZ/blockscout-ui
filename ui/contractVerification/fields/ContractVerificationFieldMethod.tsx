@@ -92,8 +92,8 @@ const ContractVerificationFieldMethod = ({ methods }: Props) => {
         </chakra.span>
         <Popover trigger="hover" isLazy placement={ isMobile ? 'bottom-end' : 'right-start' } offset={ [ -8, 8 ] }>
           <PopoverTrigger>
-            <chakra.span display="inline-block" ml={ 1 } cursor="pointer" verticalAlign="middle" h="22px">
-              <IconSvg name="info" boxSize={ 5 } color="icon_info" _hover={{ color: 'link_hovered' }}/>
+            <chakra.span display="inline-block" ml={ 4 } cursor="pointer" verticalAlign="middle" h="22px">
+              <IconSvg name="info" boxSize={ 5 } color="gray.1000" _hover={{ color: 'gray.1000' }}/>
             </chakra.span>
           </PopoverTrigger>
           <Portal>
@@ -113,7 +113,8 @@ const ContractVerificationFieldMethod = ({ methods }: Props) => {
       </Box>
       <FormFieldFancySelect<FormFields, 'method'>
         name="method"
-        placeholder="Verification method (compiler type)"
+        placeholder="Verification method"
+        label="Verification method (compiler type)"
         options={ options }
         isRequired
         isAsync={ false }
