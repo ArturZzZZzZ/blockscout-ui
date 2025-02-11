@@ -25,7 +25,7 @@ const ContractVerificationFieldAddress = ({ isReadOnly }: Props) => {
           isRequired
           placeholder="Smart contract / Address (0x...)"
           isReadOnly={ isReadOnly }
-          size={{ base: 'md', lg: 'lg' }}
+          size={{ base: 'md' }}
         />
       </ContractVerificationFormRow>
     </>

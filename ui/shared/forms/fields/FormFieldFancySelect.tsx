@@ -25,7 +25,7 @@ const FormFieldFancySelect = <
   Name extends Path<FormFields>,
 >(props: Props<FormFields, Name>) => {
   const isMobile = useIsMobile();
-  const defaultSize = isMobile ? 'md' : 'lg';
+  const defaultSize = isMobile ? 'md' : 'md';
 
   const { control } = useFormContext<FormFields>();
   const { field, fieldState, formState } = useController<FormFields, typeof props.name>({

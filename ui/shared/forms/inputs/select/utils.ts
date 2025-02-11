@@ -50,7 +50,9 @@ const getChakraStyles: (colorMode: ColorMode) => ChakraStylesConfig<Option> = (c
   return {
     control: (provided, state) => ({
       ...provided,
-      borderColor: state.hasValue ? formColor.input.filled.borderColor : formColor.input.empty.borderColor,
+      // eslint-disable-next-line no-nested-ternary
+      borderColor: state.menuIsOpen ? 'green.500!important' : state.hasValue ? formColor.input.filled.borderColor : formColor.input.empty.borderColor,
+      borderRadius: '16px',
     }),
     inputContainer: (provided) => ({
       ...provided,
