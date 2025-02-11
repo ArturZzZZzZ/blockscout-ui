@@ -12,6 +12,7 @@ import { getChakraStyles } from 'ui/shared/forms/inputs/select/utils';
 interface CommonProps {
   error?: Merge<FieldError, FieldErrorsImpl<Option>> | undefined;
   placeholderIcon?: React.ReactNode;
+  label?: React.ReactNode;
 }
 
 interface RegularSelectProps extends SelectProps<Option, boolean, GroupBase<Option>>, CommonProps {
@@ -40,7 +41,7 @@ const FancySelect = (props: Props, ref: React.LegacyRef<HTMLDivElement>) => {
 
   return (
     <FormControl
-      variant="floating"
+      // variant="floating"
       size={ props.size || 'md' }
       isRequired={ props.isRequired }
       ref={ ref }
@@ -48,21 +49,21 @@ const FancySelect = (props: Props, ref: React.LegacyRef<HTMLDivElement>) => {
       { ...(props.isDisabled ? { 'aria-disabled': true } : {}) }
       { ...(props.value ? { 'data-active': true } : {}) }
     >
+      <FormInputPlaceholder
+        text={ typeof props.label === 'string' ? props.label : '' }
+        icon={ props.placeholderIcon }
+        error={ props.error }
+        isFancy
+      />
       <SelectComponent
         { ...props }
         size={ props.size || 'md' }
         menuPortalTarget={ window.document.body }
-        placeholder=""
+        placeholder={ props.placeholder }
         styles={ styles }
         chakraStyles={ chakraStyles }
         isInvalid={ Boolean(props.error) }
         useBasicStyles
-      />
-      <FormInputPlaceholder
-        text={ typeof props.placeholder === 'string' ? props.placeholder : '' }
-        icon={ props.placeholderIcon }
-        error={ props.error }
-        isFancy
       />
     </FormControl>
   );

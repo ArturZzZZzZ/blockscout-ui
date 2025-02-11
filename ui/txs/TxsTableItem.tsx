@@ -60,7 +60,7 @@ const TxsTableItem = ({ tx, showBlockInfo, currentAddress, enableTimeIncrement, 
             timestamp={ tx.timestamp }
             enableIncrement={ enableTimeIncrement }
             isLoading={ isLoading }
-            color="text_secondary"
+            color="gray.1000"
             fontWeight="400"
           />
         </VStack>

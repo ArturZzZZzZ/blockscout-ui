@@ -1,3 +1,4 @@
+import { chakra } from '@chakra-ui/react';
 import React from 'react';
 
 import type { FormFields } from '../types';
@@ -15,13 +16,14 @@ const ContractVerificationFieldLicenseType = () => {
     <ContractVerificationFormRow>
       <FormFieldFancySelect<FormFields, 'license_type'>
         name="license_type"
-        placeholder="Contract license"
+        placeholder="Select contract license"
+        label="Contract license"
         options={ options }
       />
-      <span>
+      <chakra.span color="gray.1000">
         For best practices, all contract source code holders, publishers and authors are encouraged to also
         specify the accompanying license for their verified contract source code provided.
-      </span>
+      </chakra.span>
     </ContractVerificationFormRow>
   );
 };
