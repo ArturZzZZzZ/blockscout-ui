@@ -28,15 +28,15 @@ const BlocksTabSlot = ({ pagination }: Props) => {
     <Flex alignItems="center" columnGap={ 8 } display={{ base: 'none', lg: 'flex' }}>
       { statsQuery.data?.network_utilization_percentage !== undefined && (
         <Box>
-          <Text as="span" fontSize="sm">
+          <Text as="span" fontSize="sm" color="white">
             Network utilization (last 50 blocks):{ nbsp }
           </Text>
-          <Skeleton display="inline-block" fontSize="sm" color="blue.400" fontWeight={ 600 } isLoaded={ !statsQuery.isPlaceholderData }>
+          <Skeleton display="inline-block" fontSize="sm" color="green.500" fontWeight={ 400 } isLoaded={ !statsQuery.isPlaceholderData }>
             <span>{ statsQuery.data.network_utilization_percentage.toFixed(2) }%</span>
           </Skeleton>
         </Box>
       ) }
-      <LinkInternal display="inline-flex" alignItems="center" href={ route({ pathname: '/block/countdown' }) }>
+      <LinkInternal display="inline-flex" alignItems="center" href={ route({ pathname: '/block/countdown' }) } color="green.500">
         <IconSvg name="hourglass" boxSize={ 5 } mr={ 2 }/>
         <span>Block countdown</span>
       </LinkInternal>

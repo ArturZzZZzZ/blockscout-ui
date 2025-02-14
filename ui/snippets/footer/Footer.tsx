@@ -154,6 +154,7 @@ const Footer = () => {
     as: 'footer',
     borderTopWidth: '1px',
     borderTopColor: 'solid',
+    bg: 'gray.1200',
   };
 
   const contentProps: GridProps = {

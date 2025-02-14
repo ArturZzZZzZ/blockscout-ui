@@ -60,7 +60,7 @@ const FormFieldText = <
       isReadOnly={ isReadOnly }
       autoComplete="off"
       type={ type }
-      placeholder=" "
+      placeholder={ placeholder }
       max={ max }
       size={ size }
       bgColor={ bgColor }
@@ -73,7 +73,6 @@ const FormFieldText = <
   return (
     <FormControl
       className={ className }
-      variant="floating"
       isDisabled={ isDisabled }
       isRequired={ isRequired }
       size={ size }
@@ -82,13 +81,12 @@ const FormFieldText = <
       { rightElement ? (
         <InputGroup>
           { input }
-          { inputPlaceholder }
           <InputRightElement h="100%"> { rightElement({ field }) } </InputRightElement>
         </InputGroup>
       ) : (
         <>
-          { input }
           { inputPlaceholder }
+          { input }
         </>
       ) }
     </FormControl>

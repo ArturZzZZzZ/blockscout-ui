@@ -48,7 +48,7 @@ const TokenTransferFilter = ({
             borderColor="divider"
           >
             <Stack spacing={ 4 }>
-              <Radio value="all"><Text fontSize="md">All</Text></Radio>
+              <Radio value="all" ><Text fontSize="md">All</Text></Radio>
               <Radio value="from"><Text fontSize="md">Outgoing transfers</Text></Radio>
               <Radio value="to"><Text fontSize="md">Incoming transfers</Text></Radio>
             </Stack>

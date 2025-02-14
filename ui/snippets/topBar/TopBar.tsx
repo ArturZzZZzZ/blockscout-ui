@@ -10,13 +10,13 @@ import Settings from './settings/Settings';
 import TopBarStats from './TopBarStats';
 
 const TopBar = () => {
-  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.100');
+  const bgColor = useColorModeValue('gray.50', '#131414');
 
   return (
     <Box bgColor={ bgColor }>
       <Flex
-        py={ 2 }
-        px={{ base: 3, lg: 6 }}
+        py={ 4 }
+        px={{ base: 3, lg: 8 }}
         maxW={ `${ CONTENT_MAX_WIDTH }px` }
         m="0 auto"
         justifyContent="space-between"

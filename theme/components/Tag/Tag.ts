@@ -19,11 +19,11 @@ const variants = {
   })),
   select: definePartsStyle((props) => ({
     container: {
-      bg: mode('gray.100', 'gray.800')(props),
-      color: mode('gray.500', 'whiteAlpha.800')(props),
+      // bg: mode('gray.100', 'gray.800')(props),
+      // color: mode('gray.500', 'whiteAlpha.800')(props),
       cursor: 'pointer',
       _hover: {
-        color: 'blue.400',
+        // color: 'blue.400',
         opacity: 0.76,
       },
       [`
@@ -43,7 +43,7 @@ const sizes = {
       minH: 6,
       minW: 6,
       fontSize: 'sm',
-      px: 1,
+      px: '12px',
       py: '2px',
       lineHeight: 5,
     },
@@ -65,7 +65,7 @@ const baseStyleContainer = defineStyle({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
-  borderRadius: 'sm',
+  borderRadius: 'full',
   ...transitionProps,
 });
 

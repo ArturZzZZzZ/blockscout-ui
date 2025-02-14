@@ -15,6 +15,7 @@ const $arrowShadowColor = cssVar('popper-arrow-shadow-color');
 
 const baseStylePopper = defineStyle({
   zIndex: 'popover',
+  borderColor: 'red',
 });
 
 const baseStyleContent = defineStyle((props) => {
@@ -27,7 +28,7 @@ const baseStyleContent = defineStyle((props) => {
     [$arrowBg.variable]: $popperBg.reference,
     [$arrowShadowColor.variable]: `colors.${ shadowColor }`,
     _dark: {
-      [$popperBg.variable]: `colors.gray.900`,
+      [$popperBg.variable]: `colors.gray.1200`,
       [$arrowShadowColor.variable]: `colors.whiteAlpha.300`,
       boxShadow: 'dark-lg',
     },

@@ -70,7 +70,10 @@ const TokenSelect = ({ onClick }: Props) => {
               size="sm"
               pl="6px"
               pr="6px"
-              icon={ <IconSvg name="wallet" boxSize={ 5 }/> }
+              boxSize="32px"
+              borderRadius="8px"
+              color="white"
+              icon={ <IconSvg name="wallet" boxSize="14px"/> }
               as="a"
               onClick={ handleIconButtonClick }
             />

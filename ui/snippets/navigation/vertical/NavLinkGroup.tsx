@@ -75,8 +75,8 @@ const NavLinkGroup = ({ item, isCollapsed }: Props) => {
             </HStack>
           </Box>
         </PopoverTrigger>
-        <PopoverContent width="252px" top={{ lg: isExpanded ? '-16px' : 0, xl: isCollapsed ? 0 : '-16px' }}>
-          <PopoverBody p={ 4 }>
+        <PopoverContent width="252px" top={{ lg: isExpanded ? '-16px' : 0, xl: isCollapsed ? 0 : '-16px' }} bg="gray.1200" borderRadius="18px">
+          <PopoverBody p={ 4 } >
             <Text variant="secondary" fontSize="sm" mb={ 1 } display={{ lg: isExpanded ? 'none' : 'block', xl: isCollapsed ? 'block' : 'none' }}>
               { item.text }
             </Text>

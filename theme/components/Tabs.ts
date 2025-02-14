@@ -12,11 +12,11 @@ const variantSoftRounded = definePartsStyle((props) => {
   return {
     tab: {
       borderRadius: 'base',
-      fontWeight: '600',
-      color: mode('blue.700', 'gray.400')(props),
+      fontWeight: '400',
+      color: mode('blue.700', 'white')(props),
       _selected: {
-        color: mode('blue.700', 'gray.50')(props),
-        bg: mode('blue.50', 'gray.800')(props),
+        color: mode('blue.700', 'black')(props),
+        bg: mode('blue.50', 'green.500')(props),
         _hover: {
           color: mode('blue.700', 'gray.50')(props),
         },

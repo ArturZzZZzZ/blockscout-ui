@@ -7,7 +7,6 @@ import type { Resolution } from '@blockscout/stats-types';
 import { apos } from 'lib/html-entities';
 import Skeleton from 'ui/shared/chakra/Skeleton';
 
-import ChartWatermarkIcon from './ChartWatermarkIcon';
 import ChartWidgetGraph from './ChartWidgetGraph';
 
 export type Props = {
@@ -83,7 +82,7 @@ const ChartWidgetContent = ({
         noAnimation={ noAnimation }
         resolution={ resolution }
       />
-      <ChartWatermarkIcon w="162px" h="15%"/>
+      { /* <ChartWatermarkIcon w="162px" h="15%"/> */ }
     </Box>
   );
 };

@@ -8,7 +8,6 @@ import type { SmartContractVerificationConfig } from 'types/client/contract';
 
 import { getResourceKey } from 'lib/api/useApiQuery';
 import FormFieldFancySelect from 'ui/shared/forms/fields/FormFieldFancySelect';
-import IconSvg from 'ui/shared/IconSvg';
 
 import ContractVerificationFormRow from '../ContractVerificationFormRow';
 
@@ -69,10 +68,10 @@ const ContractVerificationFieldCompiler = ({ isVyper, isStylus }: Props) => {
         ) }
         <FormFieldFancySelect<FormFields, 'compiler'>
           name="compiler"
-          placeholder="Compiler (enter version or use the dropdown)"
+          label="Compiler (enter version or use the dropdown)"
+          placeholder="Enter or select compiler"
           loadOptions={ loadOptions }
           defaultOptions
-          placeholderIcon={ <IconSvg name="search"/> }
           isRequired
           isAsync
         />

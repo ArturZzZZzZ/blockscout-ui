@@ -52,7 +52,7 @@ const StatsWidget = ({
   period,
   href,
 }: Props) => {
-  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.100');
+  const bgColor = useColorModeValue('gray.50', 'gray.1200');
   const skeletonBgColor = useColorModeValue('blackAlpha.50', 'whiteAlpha.50');
   const hintColor = useColorModeValue('gray.600', 'gray.400');
 
@@ -90,7 +90,7 @@ const StatsWidget = ({
             lineHeight="16px"
             w="fit-content"
           >
-            <h2>{ label }</h2>
+            <chakra.span color="gray.1100">{ label }</chakra.span>
           </Skeleton>
           <Skeleton
             isLoaded={ !isLoading }
@@ -102,7 +102,7 @@ const StatsWidget = ({
           >
             { valuePrefix && <chakra.span whiteSpace="pre">{ valuePrefix }</chakra.span> }
             { typeof value === 'string' ? (
-              <TruncatedValue isLoading={ isLoading } value={ value }/>
+              <TruncatedValue isLoading={ isLoading } value={ value } color="white"/>
             ) : (
               value
             ) }

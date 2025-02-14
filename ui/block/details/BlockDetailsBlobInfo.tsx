@@ -42,7 +42,7 @@ const BlockDetailsBlobInfo = ({ data }: Props) => {
           </DetailsInfoItem.Label>
           <DetailsInfoItem.Value>
             <Text>{ BigNumber(data.blob_gas_price).dividedBy(WEI).toFixed() } { currencyUnits.ether } </Text>
-            <Text variant="secondary" whiteSpace="pre">
+            <Text color="gray.1000" whiteSpace="pre">
               { space }({ BigNumber(data.blob_gas_price).dividedBy(WEI_IN_GWEI).toFixed() } { currencyUnits.gwei })
             </Text>
           </DetailsInfoItem.Value>
@@ -68,7 +68,7 @@ const BlockDetailsBlobInfo = ({ data }: Props) => {
             Blob burnt fees
           </DetailsInfoItem.Label>
           <DetailsInfoItem.Value>
-            <IconSvg name="flame" boxSize={ 5 } color="gray.500" mr={ 2 }/>
+            <IconSvg name="flame" boxSize={ 5 } color="white" mr={ 2 }/>
             { burntBlobFees.dividedBy(WEI).toFixed() } { currencyUnits.ether }
             { !blobFees.isEqualTo(ZERO) && (
               <Tooltip label="Blob burnt fees / Txn fees * 100%">
@@ -89,7 +89,7 @@ const BlockDetailsBlobInfo = ({ data }: Props) => {
           </DetailsInfoItem.Label>
           <DetailsInfoItem.Value>
             <Text>{ BigNumber(data.excess_blob_gas).dividedBy(WEI).toFixed() } { currencyUnits.ether } </Text>
-            <Text variant="secondary" whiteSpace="pre">
+            <Text color="gray.1000" whiteSpace="pre">
               { space }({ BigNumber(data.excess_blob_gas).dividedBy(WEI_IN_GWEI).toFixed() } { currencyUnits.gwei })
             </Text>
           </DetailsInfoItem.Value>
