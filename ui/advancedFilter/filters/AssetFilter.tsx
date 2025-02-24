@@ -122,6 +122,10 @@ const AssetFilter = ({ value = [], handleFilterChange, onClose }: Props) => {
           <Flex rowGap={ 3 } flexWrap="wrap" gap={ 3 } mb={ 2 }>
             { [ NATIVE_TOKEN, ...tokensQuery.data.items ].map(token => (
               <Tag
+                bg="#252626"
+                py="10px"
+                px="12px"
+                borderRadius="12px"
                 key={ token.address }
                 data-id={ token.address }
                 onClick={ onTokenClick(token) }
@@ -129,7 +133,7 @@ const AssetFilter = ({ value = [], handleFilterChange, onClose }: Props) => {
               >
                 <Flex flexGrow={ 1 } alignItems="center">
                   { token.address === NATIVE_TOKEN.address ? <NativeTokenIcon boxSize={ 5 }/> : <TokenEntity.Icon token={ token }/> }
-                  { token.symbol || token.name || token.address }
+                  <Text fontWeight={ 700 } color="white"> { token.symbol || token.name || token.address }</Text>
                 </Flex>
               </Tag>
             )) }

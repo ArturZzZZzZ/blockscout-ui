@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/react';
+import { Link, chakra } from '@chakra-ui/react';
 import React from 'react';
 
 import ContractVerificationMethod from '../ContractVerificationMethod';
@@ -13,9 +13,9 @@ const ContractVerificationVyperMultiPartFile = () => {
 
   const interfacesHint = (
     <>
-      <span>Add any </span>
-      <Link href="https://docs.vyperlang.org/en/stable/interfaces.html" target="_blank">required interfaces</Link>
-      <span> for the main compiled contract.</span>
+      <chakra.span color="gray.1000">Add any </chakra.span>
+      <Link color="green.500" href="https://docs.vyperlang.org/en/stable/interfaces.html" target="_blank">required interfaces</Link>
+      <chakra.span color="gray.1000"> for the main compiled contract.</chakra.span>
     </>
   );
 

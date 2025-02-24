@@ -43,7 +43,7 @@ const TxsTableItem = ({ tx, showBlockInfo, currentAddress, enableTimeIncrement, 
       transitionTimingFunction="linear"
       key={ tx.hash }
     >
-      <Td pl={ 4 }>
+      <Td pl={ 4 } >
         <TxAdditionalInfo tx={ tx } isLoading={ isLoading }/>
       </Td>
       <Td pr={ 4 }>
@@ -60,7 +60,7 @@ const TxsTableItem = ({ tx, showBlockInfo, currentAddress, enableTimeIncrement, 
             timestamp={ tx.timestamp }
             enableIncrement={ enableTimeIncrement }
             isLoading={ isLoading }
-            color="text_secondary"
+            color="gray.1000"
             fontWeight="400"
           />
         </VStack>
@@ -82,7 +82,7 @@ const TxsTableItem = ({ tx, showBlockInfo, currentAddress, enableTimeIncrement, 
       </Td>
       <Td whiteSpace="nowrap">
         { tx.method && (
-          <Tag colorScheme={ tx.method === 'Multicall' ? 'teal' : 'gray' } isLoading={ isLoading } isTruncated>
+          <Tag borderRadius="4px" color="white" colorScheme={ tx.method === 'Multicall' ? 'teal' : 'gray' } isLoading={ isLoading } isTruncated>
             { tx.method }
           </Tag>
         ) }

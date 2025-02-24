@@ -80,7 +80,7 @@ const AddressInternalTxs = ({ scrollRef, shouldRender = true, isQueryEnabled = t
   ) : null ;
 
   const actionBar = (
-    <ActionBar mt={ -6 } justifyContent="left">
+    <ActionBar mt={ -6 } justifyContent="space-between">
       <AddressTxsFilter
         defaultFilter={ filterValue }
         onFilterChange={ handleFilterChange }

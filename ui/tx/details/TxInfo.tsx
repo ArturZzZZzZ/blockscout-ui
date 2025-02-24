@@ -799,9 +799,10 @@ const TxInfo = ({ data, isLoading, socketStatus }: Props) => {
             <Link
               display="inline-block"
               fontSize="sm"
-              textDecorationLine="underline"
-              textDecorationStyle="dashed"
+              // textDecorationLine="underline"
+              // textDecorationStyle="dashed"
               onClick={ handleCutClick }
+              color="green.500"
             >
               { isExpanded ? 'Hide details' : 'View details' }
             </Link>

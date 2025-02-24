@@ -3,6 +3,7 @@ import React from 'react';
 
 import config from 'configs/app';
 import PageTitle from 'ui/shared/Page/PageTitle';
+import { replaceValue } from 'ui/stats/utils';
 
 import ChartsWidgetsList from '../stats/ChartsWidgetsList';
 import NumberWidgetsList from '../stats/NumberWidgetsList';
@@ -19,10 +20,12 @@ const Stats = () => {
     interval,
     handleIntervalChange,
     handleFilterChange,
-    displayedCharts,
+    displayedCharts: oldDisplayedCharts,
     filterQuery,
     initialFilterQuery,
   } = useStats();
+
+  const displayedCharts = replaceValue(oldDisplayedCharts, 'ETH', config.chain.shortName ?? 'ADI');
 
   return (
     <>

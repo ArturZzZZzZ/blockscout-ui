@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/react';
+import { chakra, Link } from '@chakra-ui/react';
 import { useQueryClient } from '@tanstack/react-query';
 import React from 'react';
 
@@ -29,10 +29,15 @@ const ContractVerificationFieldEvmVersion = ({ isVyper }: Props) => {
         placeholder="EVM Version"
         options={ options }
         isRequired
+        label="EVM version"
       />
       <>
-        <span>The EVM version the contract is written for. If the bytecode does not match the version, we try to verify using the latest EVM version. </span>
+        <chakra.span color="gray.1000">The EVM version the contract is written for.
+          If the bytecode does not match the version, we try to verify using the latest EVM version.
+        </chakra.span>
+        { ' ' }
         <Link
+          color="green.500"
           href={ isVyper ?
             'https://docs.vyperlang.org/en/stable/compiling-a-contract.html#target-options' :
             'https://docs.soliditylang.org/en/latest/using-the-compiler.html#target-options'

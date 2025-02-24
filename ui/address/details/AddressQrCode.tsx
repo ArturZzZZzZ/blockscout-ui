@@ -77,9 +77,12 @@ const AddressQrCode = ({ address, className, isLoading }: Props) => {
           size="sm"
           pl="6px"
           pr="6px"
+          boxSize="40px"
+          borderRadius="12px"
           onClick={ onOpen }
-          icon={ <IconSvg name="qr_code" boxSize={ 5 }/> }
+          icon={ <IconSvg name="qr_code" boxSize="12px"/> }
           flexShrink={ 0 }
+          color="white"
         />
       </Tooltip>
 

@@ -1,4 +1,4 @@
-import { Box, Flex, Link } from '@chakra-ui/react';
+import { Box, Flex, Link, chakra } from '@chakra-ui/react';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
@@ -55,8 +55,8 @@ const ContractVerificationSolidityHardhat = ({ config: formConfig }: { config: S
           <ContractVerificationFormCodeSnippet code={ secondCodeSnippet }/>
         </Flex>
         <Box whiteSpace="pre-wrap">
-          <span>Full tutorial about contract verification via Hardhat on Blockscout is available </span>
-          <Link href="https://docs.blockscout.com/for-users/verifying-a-smart-contract/hardhat-verification-plugin" target="_blank">
+          <chakra.span color="gray.1000">Full tutorial about contract verification via Hardhat on Blockscout is available </chakra.span>
+          <Link color="green.500" href="https://docs.blockscout.com/for-users/verifying-a-smart-contract/hardhat-verification-plugin" target="_blank">
             here
           </Link>
         </Box>

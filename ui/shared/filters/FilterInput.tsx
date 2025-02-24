@@ -62,6 +62,7 @@ const FilterInput = ({ onChange, className, size = 'sm', placeholder, initialVal
           whiteSpace="nowrap"
           type={ type }
           name={ name }
+          bg="gray.1500!important"
         />
 
         { filterQuery ? (

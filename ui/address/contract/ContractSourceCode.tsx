@@ -57,7 +57,7 @@ export const ContractSourceCode = ({ data, isLoading, sourceAddress }: Props) =>
     <Skeleton isLoaded={ !isLoading } fontWeight={ 500 }>
       <span>Contract source code</span>
       { data?.language &&
-        <Text whiteSpace="pre" as="span" variant="secondary"> ({ formatLanguageName(data.language) })</Text> }
+        <Text whiteSpace="pre" as="span" color="gray.1000"> ({ formatLanguageName(data.language) })</Text> }
     </Skeleton>
   );
 
@@ -72,7 +72,7 @@ export const ContractSourceCode = ({ data, isLoading, sourceAddress }: Props) =>
         ml={{ base: '0', lg: 'auto' }}
         isLoading={ isLoading }
       >
-        <Skeleton isLoaded={ !isLoading }>
+        <Skeleton isLoaded={ !isLoading } color="green.500">
           View UML diagram
         </Skeleton>
       </LinkInternal>

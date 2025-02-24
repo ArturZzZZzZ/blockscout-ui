@@ -24,7 +24,7 @@ interface Props {
 }
 
 const TokenSelectMenu = ({ erc20sort, erc1155sort, erc404sort, filteredData, onInputChange, onSortClick, searchTerm }: Props) => {
-  const searchIconColor = useColorModeValue('blackAlpha.600', 'whiteAlpha.600');
+  const searchIconColor = useColorModeValue('blackAlpha.600', 'gray.1000');
 
   const hasFilteredResult = sumBy(Object.values(filteredData), ({ items }) => items.length) > 0;
 
@@ -39,7 +39,9 @@ const TokenSelectMenu = ({ erc20sort, erc1155sort, erc404sort, filteredData, onI
           placeholder="Search by token name"
           ml="1px"
           onChange={ onInputChange }
-          bgColor="dialog_bg"
+          bgColor="#242727"
+          border="none"
+          _placeholder={{ color: 'gray.1000' }}
         />
       </InputGroup>
       <Flex flexDir="column" rowGap={ 6 }>
@@ -74,12 +76,12 @@ const TokenSelectMenu = ({ erc20sort, erc1155sort, erc404sort, filteredData, onI
           return (
             <Box key={ type }>
               <Flex justifyContent="space-between">
-                <Text mb={ 3 } color="gray.500" fontWeight={ 600 } fontSize="sm">
+                <Text mb={ 3 } color="gray.1000" fontWeight={ 600 } fontSize="sm">
                   { getTokenTypeName(type) } tokens ({ numPrefix }{ tokenInfo.items.length })
                 </Text>
                 { hasSort && (
                   <Link data-type={ type } onClick={ onSortClick } aria-label={ `Sort ${ getTokenTypeName(type) } tokens` }>
-                    <IconSvg name="arrows/east" boxSize={ 5 } transform={ arrowTransform } transitionDuration="faster"/>
+                    <IconSvg name="arrows/east" color="green.500" boxSize={ 5 } transform={ arrowTransform } transitionDuration="faster"/>
                   </Link>
                 ) }
               </Flex>

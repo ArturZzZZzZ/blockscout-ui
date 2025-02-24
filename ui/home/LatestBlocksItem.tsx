@@ -35,8 +35,9 @@ const LatestBlocksItem = ({ block, isLoading }: Props) => {
       transitionTimingFunction="linear"
       borderRadius="md"
       border="1px solid"
-      borderColor="divider"
+      borderColor="transparent"
       p={ 3 }
+      bg="gray.1200"
     >
       <Flex alignItems="center" overflow="hidden" w="100%" mb={ 3 }>
         <BlockEntity
@@ -57,7 +58,7 @@ const LatestBlocksItem = ({ block, isLoading }: Props) => {
           timestamp={ block.timestamp }
           enableIncrement={ !isLoading }
           isLoading={ isLoading }
-          color="text_secondary"
+          color="gray.1100"
           fontWeight={ 400 }
           display="inline-block"
           fontSize="sm"
@@ -66,19 +67,19 @@ const LatestBlocksItem = ({ block, isLoading }: Props) => {
         />
       </Flex>
       <Grid gridGap={ 2 } templateColumns="auto minmax(0, 1fr)" fontSize="sm">
-        <Skeleton isLoaded={ !isLoading }>Txn</Skeleton>
-        <Skeleton isLoaded={ !isLoading } color="text_secondary"><span>{ block.transaction_count }</span></Skeleton>
+        <Skeleton isLoaded={ !isLoading } color="gray.1100">Txn</Skeleton>
+        <Skeleton isLoaded={ !isLoading } color="white"><span>{ block.transaction_count }</span></Skeleton>
 
         { !config.features.rollup.isEnabled && !config.UI.views.block.hiddenFields?.total_reward && (
           <>
-            <Skeleton isLoaded={ !isLoading }>Reward</Skeleton>
-            <Skeleton isLoaded={ !isLoading } color="text_secondary"><span>{ totalReward.dp(10).toFixed() }</span></Skeleton>
+            <Skeleton isLoaded={ !isLoading } color="gray.1100">Reward</Skeleton>
+            <Skeleton isLoaded={ !isLoading } color="white"><span>{ totalReward.dp(10).toFixed() }</span></Skeleton>
           </>
         ) }
 
         { !config.features.rollup.isEnabled && !config.UI.views.block.hiddenFields?.miner && (
           <>
-            <Skeleton isLoaded={ !isLoading } textTransform="capitalize">{ getNetworkValidatorTitle() }</Skeleton>
+            <Skeleton isLoaded={ !isLoading } textTransform="capitalize" color="gray.1100">{ getNetworkValidatorTitle() }</Skeleton>
             <AddressEntity
               address={ block.miner }
               isLoading={ isLoading }

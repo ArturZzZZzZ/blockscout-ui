@@ -47,7 +47,9 @@ const TableColumnFilterWrapper = ({ columnName, isActive, className, children, i
           color="text_secondary"
           fontSize="sm"
           fontWeight={ 500 }
-          leftIcon={ <IconSvg name="filter" w="19px" h="19px"/> }
+          leftIcon={ (
+            <IconSvg name="filter-table" w="19px" h="19px"/>
+          ) }
           padding={ 0 }
           sx={{
             'span:only-child': {

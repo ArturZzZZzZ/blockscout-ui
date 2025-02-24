@@ -51,7 +51,7 @@ const DragAndDropArea = ({ onDrop, children, className, isDisabled, fullFilePath
   }, [ isDisabled ]);
 
   const disabledBorderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.200');
-  const borderColor = isDragOver ? 'link_hovered' : 'link';
+  const borderColor = isDragOver ? 'link_hovered' : 'green.500';
 
   return (
     <Center

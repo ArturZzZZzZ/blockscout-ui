@@ -27,7 +27,7 @@ const LinkInternal = ({ isLoading, variant, scroll = true, ...props }: Props, re
 
   return (
     <NextLink href={ props.href as NextLinkProps['href'] } passHref target={ props.target } legacyBehavior scroll={ scroll }>
-      <Link { ...props } ref={ ref } { ...styleProps }/>
+      <Link color="green.500" { ...props } ref={ ref } { ...styleProps }/>
     </NextLink>
   );
 };

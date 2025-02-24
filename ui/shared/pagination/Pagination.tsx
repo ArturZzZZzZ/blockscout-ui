@@ -26,8 +26,10 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
     >
       <Skeleton isLoaded={ !showSkeleton } display="inline-block" mr={ 4 } borderRadius="base">
         <Button
+          bg="gray.1200"
           variant="outline"
           size="sm"
+          borderWidth="1px"
           onClick={ resetPage }
           isDisabled={ page === 1 || isLoading }
         >
@@ -36,6 +38,7 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
       </Skeleton>
       <Skeleton isLoaded={ !showSkeleton } display="inline-block" mr={ 3 } borderRadius="base">
         <IconButton
+          borderWidth="1px"
           variant="outline"
           onClick={ onPrevPageClick }
           size="sm"
@@ -55,12 +58,14 @@ const Pagination = ({ page, onNextPageClick, onPrevPageClick, resetPage, hasPage
           h={ 8 }
           minW="36px"
           cursor="unset"
+          _selected={{ bg: '#001917', color: 'white', borderColor: 'transparent' }}
         >
           { page }
         </Button>
       </Skeleton>
       <Skeleton isLoaded={ !showSkeleton } display="inline-block" ml={ 3 } borderRadius="base">
         <IconButton
+          borderWidth="1px"
           variant="outline"
           onClick={ onNextPageClick }
           size="sm"

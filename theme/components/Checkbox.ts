@@ -16,12 +16,13 @@ const baseStyleControl = defineStyle((props) => {
   const { colorScheme: c } = props;
 
   return {
+    borderWidth: '1px',
     _checked: {
-      bg: mode(`${ c }.500`, `${ c }.300`)(props),
-      borderColor: mode(`${ c }.500`, `${ c }.300`)(props),
+      bg: mode(`${ c }.500`, `transparent`)(props),
+      borderColor: mode(`${ c }.500`, `green.500`)(props),
       _hover: {
-        bg: mode(`${ c }.600`, `${ c }.400`)(props),
-        borderColor: mode(`${ c }.600`, `${ c }.400`)(props),
+        bg: mode(`${ c }.600`, `transparent`)(props),
+        borderColor: mode(`${ c }.600`, `green.500`)(props),
       },
     },
     _indeterminate: {
@@ -56,6 +57,9 @@ const baseStyleLabel = defineStyle({
 const baseStyle = definePartsStyle((props) => ({
   label: baseStyleLabel,
   control: runIfFn(baseStyleControl, props),
+  icon: {
+    color: 'green.500',
+  },
 }));
 
 const Checkbox = defineMultiStyleConfig({

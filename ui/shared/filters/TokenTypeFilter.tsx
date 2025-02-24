@@ -30,11 +30,11 @@ const TokenTypeFilter = <T extends TokenType | NFTTokenType>({ nftOnly, onChange
   return (
     <>
       <Flex justifyContent="space-between" fontSize="sm">
-        <Text fontWeight={ 600 } variant="secondary">Type</Text>
+        <Text fontWeight={ 600 } color="white">Type</Text>
         <Link
           onClick={ handleReset }
           cursor={ value.length > 0 ? 'pointer' : 'unset' }
-          color={ value.length > 0 ? 'link' : 'text_secondary' }
+          color={ value.length > 0 ? 'green.500' : 'text_secondary' }
           _hover={{
             color: value.length > 0 ? 'link_hovered' : 'text_secondary',
           }}

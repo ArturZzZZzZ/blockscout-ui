@@ -83,6 +83,7 @@ const AdaptiveTabsList = (props: Props) => {
     >
       { props.leftSlot && <Box ref={ leftSlotRef } { ...props.leftSlotProps }> { props.leftSlot } </Box> }
       { tabsList.slice(0, props.isLoading ? 5 : Infinity).map((tab, index) => {
+
         if (!tab.id) {
           if (props.isLoading) {
             return null;
@@ -108,24 +109,20 @@ const AdaptiveTabsList = (props: Props) => {
             />
           );
         }
-
+        const isActive = index === props.activeTabIndex;
         return (
           <Tab
+            _hover={{ _selected: { color: 'black' } }}
             key={ tab.id.toString() }
             ref={ tabsRefs[index] }
             { ...(index < tabsCut ? {} : hiddenItemStyles) }
             scrollSnapAlign="start"
             flexShrink={ 0 }
-            sx={{
-              '&:hover span': {
-                color: 'inherit',
-              },
-            }}
-            { ...(index === props.activeTabIndex ? { 'data-selected': true } : {}) }
+            { ...(isActive ? { 'data-selected': true } : {}) }
           >
             <Skeleton isLoaded={ !props.isLoading }>
               { typeof tab.title === 'function' ? tab.title() : tab.title }
-              <TabCounter count={ tab.count }/>
+              <TabCounter count={ tab.count } isActive={ isActive }/>
             </Skeleton>
           </Tab>
         );

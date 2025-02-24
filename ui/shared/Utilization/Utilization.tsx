@@ -24,7 +24,7 @@ const Utilization = ({ className, value, colorScheme = 'green', isLoading }: Pro
           <Box bg={ color } w={ valueString } h="100%"/>
         </Box>
       </Skeleton>
-      <Skeleton isLoaded={ !isLoading } color={ color } fontWeight="bold">
+      <Skeleton isLoaded={ !isLoading } color={ color } fontWeight="400">
         <span>
           { valueString }
         </span>

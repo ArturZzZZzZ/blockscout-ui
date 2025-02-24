@@ -8,7 +8,6 @@ import type { SmartContractVerificationConfig } from 'types/client/contract';
 
 import { getResourceKey } from 'lib/api/useApiQuery';
 import FormFieldFancySelect from 'ui/shared/forms/fields/FormFieldFancySelect';
-import IconSvg from 'ui/shared/IconSvg';
 
 import ContractVerificationFormRow from '../ContractVerificationFormRow';
 
@@ -69,21 +68,21 @@ const ContractVerificationFieldCompiler = ({ isVyper, isStylus }: Props) => {
         ) }
         <FormFieldFancySelect<FormFields, 'compiler'>
           name="compiler"
-          placeholder="Compiler (enter version or use the dropdown)"
+          label="Compiler (enter version or use the dropdown)"
+          placeholder="Enter or select compiler"
           loadOptions={ loadOptions }
           defaultOptions
-          placeholderIcon={ <IconSvg name="search"/> }
           isRequired
           isAsync
         />
       </>
       { isVyper || isStylus ? null : (
-        <chakra.div mt={{ base: 0, lg: 8 }}>
-          <span >The compiler version is specified in </span>
-          <Code color="text_secondary">pragma solidity X.X.X</Code>
-          <span>. Use the compiler version rather than the nightly build. If using the Solidity compiler, run </span>
-          <Code color="text_secondary">solc —version</Code>
-          <span> to check.</span>
+        <chakra.div mt={{ base: 0, lg: 8 }} color="gray.1000">
+          <chakra.span >The compiler version is specified in </chakra.span>
+          <Code color="#808C8B" bg="green.700">pragma solidity X.X.X</Code>
+          <chakra.span>. Use the compiler version rather than the nightly build. If using the Solidity compiler, run </chakra.span>
+          <Code color="#808C8B" bg="green.700">solc —version</Code>
+          <chakra.span> to check.</chakra.span>
         </chakra.div>
       ) }
     </ContractVerificationFormRow>

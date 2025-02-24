@@ -13,28 +13,35 @@ const transitionProps = getDefaultTransitionProps();
 const { defineMultiStyleConfig, definePartsStyle } =
   createMultiStyleConfigHelpers(parts.keys);
 
+const greenVariant = definePartsStyle((props) => ({
+  container: {
+    bg: mode('green.100', 'green.700')(props),
+  },
+}));
+
 const variants = {
   subtle: definePartsStyle((props) => ({
     container: Badge.variants?.subtle(props),
   })),
   select: definePartsStyle((props) => ({
     container: {
-      bg: mode('gray.100', 'gray.800')(props),
-      color: mode('gray.500', 'whiteAlpha.800')(props),
+      // bg: mode('gray.100', 'gray.800')(props),
+      // color: mode('gray.500', 'whiteAlpha.800')(props),
       cursor: 'pointer',
       _hover: {
-        color: 'blue.400',
+        // color: 'blue.400',
         opacity: 0.76,
       },
       [`
         &[data-selected=true],
         &[data-selected=true][aria-selected=true]
       `]: {
-        bg: mode('blue.500', 'blue.900')(props),
-        color: 'whiteAlpha.800',
+        bg: mode('blue.500', '#001917')(props),
+        color: 'green.500',
       },
     },
   })),
+  green: greenVariant,
 };
 
 const sizes = {
@@ -43,7 +50,7 @@ const sizes = {
       minH: 6,
       minW: 6,
       fontSize: 'sm',
-      px: 1,
+      px: '12px',
       py: '2px',
       lineHeight: 5,
     },
@@ -65,7 +72,7 @@ const baseStyleContainer = defineStyle({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
-  borderRadius: 'sm',
+  borderRadius: 'full',
   ...transitionProps,
 });
 

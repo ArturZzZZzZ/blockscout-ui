@@ -49,7 +49,7 @@ const TokenTransferTableItem = ({
             enableIncrement
             isLoading={ isLoading }
             display="inline-block"
-            color="gray.500"
+            color="gray.1000"
             fontWeight="400"
             ml="10px"
           />
@@ -58,7 +58,9 @@ const TokenTransferTableItem = ({
       <Td>
         { method ? (
           <Box my="3px">
-            <Tag isLoading={ isLoading } isTruncated>{ method }</Tag>
+            <Tag borderRadius="4px" color="white"
+              bg="#282828"
+              isLoading={ isLoading } isTruncated>{ method }</Tag>
           </Box>
         ) : null }
       </Td>
@@ -93,7 +95,7 @@ const TokenTransferTableItem = ({
             </Skeleton>
           ) }
           { usd && (
-            <Skeleton isLoaded={ !isLoading } color="text_secondary" mt="10px" wordBreak="break-all">
+            <Skeleton isLoaded={ !isLoading } color="gray.1000" mt="10px" wordBreak="break-all">
               <span>${ usd }</span>
             </Skeleton>
           ) }

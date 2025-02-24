@@ -42,8 +42,8 @@ const AdditionalInfoButton = ({ isOpen, onClick, className, isLoading }: Props, 
       <IconSvg
         name="info"
         boxSize={ 5 }
-        color={ isOpen ? 'link_hovered' : 'icon_info' }
-        _hover={{ color: 'link_hovered' }}
+        color={ isOpen ? 'green.500' : 'gray.1000' }
+        _hover={{ color: 'green.500' }}
       />
     </Button>
   );

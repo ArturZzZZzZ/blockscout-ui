@@ -711,7 +711,6 @@ export const RESOURCES = {
     path: '/api/v2/token-transfers',
     filterFields: [ 'type' as const ],
   },
-
   // APP STATS
   stats: {
     path: '/api/v2/stats',

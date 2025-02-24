@@ -49,7 +49,7 @@ const CopyToClipboard = ({ text, className, isLoading, onClick, size = 5, type, 
       <IconButton
         { ...colorProps }
         aria-label="copy"
-        icon={ <IconSvg name={ iconName } boxSize={ size }/> }
+        icon={ <IconSvg name={ iconName } boxSize={ size } color="#939393"/> }
         boxSize={ size }
         variant={ variant }
         colorScheme={ colorScheme }

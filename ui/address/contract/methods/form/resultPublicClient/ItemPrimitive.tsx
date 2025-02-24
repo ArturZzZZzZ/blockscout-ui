@@ -1,4 +1,4 @@
-import { Tooltip } from '@chakra-ui/react';
+import { Tooltip, chakra } from '@chakra-ui/react';
 import BigNumber from 'bignumber.js';
 import React from 'react';
 import type { AbiParameter } from 'viem';
@@ -54,7 +54,7 @@ const ItemPrimitive = ({ abiParameter, data, level, hideLabel }: Props) => {
     if (intMatch && typeof data === 'bigint' && intMatch.max > INT_TOOLTIP_THRESHOLD && data > INT_TOOLTIP_THRESHOLD) {
       const dividedValue = BigNumber(data.toString()).div(WEI);
       return (
-        <Tooltip label={ dividedValue.toLocaleString() + ' ETH' }>
+        <Tooltip label={ dividedValue.toLocaleString() + ' ADI' }>
           <span>{ castValueToString(data) }</span>
         </Tooltip>
       );
@@ -65,7 +65,7 @@ const ItemPrimitive = ({ abiParameter, data, level, hideLabel }: Props) => {
 
   return (
     <p>
-      <span>{ printRowOffset(level) }</span>
+      <chakra.span>{ printRowOffset(level) }</chakra.span>
       { !hideLabel && <ItemLabel abiParameter={ abiParameter }/> }
       { value }
     </p>

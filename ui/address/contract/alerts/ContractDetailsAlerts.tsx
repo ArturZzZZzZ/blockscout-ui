@@ -49,7 +49,7 @@ const ContractDetailsAlerts = ({ data, isLoading, addressHash, channel }: Props)
       ) }
       { data?.is_verified && (
         <Skeleton isLoaded={ !isLoading }>
-          <Alert status="success" flexWrap="wrap" rowGap={ 3 } columnGap={ 5 }>
+          <Alert bg="green.700" status="success" flexWrap="wrap" rowGap={ 3 } columnGap={ 5 }>
             <span>Contract Source Code Verified ({ data.is_partially_verified ? 'Partial' : 'Exact' } Match)</span>
             {
               data.is_partially_verified ? (

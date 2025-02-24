@@ -159,7 +159,7 @@ const BlockPageContent = () => {
           columnGap={ 2 }
           fontWeight={ 500 }
         >
-          <chakra.span flexShrink={ 0 }>
+          <chakra.span flexShrink={ 0 } color="gray.1000">
             { `${ capitalize(getNetworkValidationActionText()) } by` }
           </chakra.span>
           <AddressEntity address={ blockQuery.data.miner }/>

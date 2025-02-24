@@ -24,7 +24,7 @@ const getValue = (startDate: dayjs.Dayjs, duration: number) => {
 
 const GasInfoUpdateTimer = ({ startTime, duration, className, size = 4 }: Props) => {
   const [ value, setValue ] = React.useState(getValue(dayjs(startTime), duration));
-  const trackColor = useColorModeValue('blackAlpha.50', 'whiteAlpha.100');
+  const trackColor = useColorModeValue('blackAlpha.50', 'gray.1200');
 
   React.useEffect(() => {
     const startDate = dayjs(startTime);
@@ -42,7 +42,7 @@ const GasInfoUpdateTimer = ({ startTime, duration, className, size = 4 }: Props)
     };
   }, [ startTime, duration ]);
 
-  return <CircularProgress className={ className } value={ value } trackColor={ trackColor } size={ size }/>;
+  return <CircularProgress className={ className } value={ value } color="green.500" trackColor={ trackColor } size={ size }/>;
 };
 
 export default React.memo(chakra(GasInfoUpdateTimer));
