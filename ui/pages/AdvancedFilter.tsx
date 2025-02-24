@@ -210,12 +210,13 @@ const AdvancedFilter = () => {
     <>
       <PageTitle
         title="Advanced filter"
+        color="white"
         withTextAd
       />
       <Flex mb={ 4 } justifyContent="space-between" alignItems="start">
-        <Text fontSize="lg" mr={ 3 } lineHeight="24px" w="100px">Filtered by:</Text>
+        <Text fontSize="lg" mr={ 3 } lineHeight="24px" w="100px" color="white">Filtered by:</Text>
         { filterTags.length !== 0 && (
-          <Link onClick={ clearAllFilters } display="flex" alignItems="center" justifyContent="end" gap={ 2 } fontSize="sm" w="150px">
+          <Link onClick={ clearAllFilters } display="flex" alignItems="center" justifyContent="end" gap={ 2 } fontSize="sm" w="150px" color="green.500">
             <IconSvg name="repeat" boxSize={ 5 }/>
             Reset filters
           </Link>
@@ -223,9 +224,9 @@ const AdvancedFilter = () => {
       </Flex>
       <HStack gap={ 2 } flexWrap="wrap" mb={ 6 }>
         { filterTags.map(t => (
-          <Tag key={ t.name } colorScheme="blue" display="inline-flex">
+          <Tag key={ t.name } borderRadius="8px" variant="green" display="inline-flex">
             <TagLabel>
-              <chakra.span color="text_secondary">{ t.name }: </chakra.span>
+              <chakra.span color="gray.1000">{ t.name }: </chakra.span>
               <chakra.span color="text">{ t.value }</chakra.span>
             </TagLabel>
             <TagCloseButton onClick={ onClearFilter(t.key) }/>
@@ -233,15 +234,15 @@ const AdvancedFilter = () => {
         )) }
         { filterTags.length === 0 && (
           <>
-            <Tag colorScheme="blue" display="inline-flex">
+            <Tag borderRadius="8px" variant="green" display="inline-flex">
               <TagLabel>
-                <chakra.span color="text_secondary">Type: </chakra.span>
+                <chakra.span color="gray.1000">Type: </chakra.span>
                 <chakra.span color="text">All</chakra.span>
               </TagLabel>
             </Tag>
-            <Tag colorScheme="blue" display="inline-flex">
+            <Tag borderRadius="8px" variant="green" display="inline-flex">
               <TagLabel>
-                <chakra.span color="text_secondary">Age: </chakra.span>
+                <chakra.span color="gray.1000">Age: </chakra.span>
                 <chakra.span color="text">7d</chakra.span>
               </TagLabel>
             </Tag>

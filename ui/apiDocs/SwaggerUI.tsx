@@ -29,9 +29,9 @@ const NeverShowInfoPlugin = () => {
 };
 
 const SwaggerUI = () => {
-  const mainColor = useColorModeValue('blackAlpha.800', 'whiteAlpha.800');
-  const borderColor = useToken('colors', 'divider');
-  const mainBgColor = useColorModeValue('blackAlpha.100', 'whiteAlpha.200');
+  const mainColor = useColorModeValue('blackAlpha.800', 'white');
+  const borderColor = useToken('colors', 'green.500');
+  const mainBgColor = useColorModeValue('blackAlpha.100', '#000');
 
   const swaggerStyle: SystemStyleObject = {
     '.swagger-ui .scheme-container, .opblock-tag': {

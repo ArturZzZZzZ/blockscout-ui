@@ -34,13 +34,18 @@ const VerifiedContractsTable = ({ data, sort, setSorting, isLoading }: Props) =>
         <Tr>
           <Th width="50%">Contract</Th>
           <Th width="130px" isNumeric>
-            <Link display="flex" alignItems="center" justifyContent="flex-end" onClick={ isLoading ? undefined : onSortToggle('balance') } columnGap={ 1 }>
+            <Link
+              display="flex"
+              alignItems="center"
+              color="green.500"
+              justifyContent="flex-end" onClick={ isLoading ? undefined : onSortToggle('balance') } columnGap={ 1 }>
               { sort?.includes('balance') && <IconSvg name="arrows/east" boxSize={ 4 } transform={ sortIconTransform }/> }
               Balance { currencyUnits.ether }
             </Link>
           </Th>
           <Th width="130px" isNumeric>
             <Link
+              color="green.500"
               display="flex"
               alignItems="center"
               justifyContent="flex-end"

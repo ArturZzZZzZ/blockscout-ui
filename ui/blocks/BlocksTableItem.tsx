@@ -1,4 +1,4 @@
-import { Tr, Td, Flex, Box, Tooltip, useColorModeValue } from '@chakra-ui/react';
+import { Tr, Td, Flex, Box, Tooltip } from '@chakra-ui/react';
 import BigNumber from 'bignumber.js';
 import { motion } from 'framer-motion';
 import React from 'react';
@@ -34,7 +34,7 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
   const burntFees = BigNumber(data.burnt_fees || 0);
   const txFees = BigNumber(data.transaction_fees || 0);
 
-  const burntFeesIconColor = useColorModeValue('gray.500', 'inherit');
+  // const burntFeesIconColor = useColorModeValue('gray.500', 'inherit');
 
   const baseFeeValue = getBaseFeeValue(data.base_fee_per_gas);
 
@@ -76,7 +76,7 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
         />
       </Td>
       <Td fontSize="sm">
-        <Skeleton isLoaded={ !isLoading } display="inline-block">
+        <Skeleton isLoaded={ !isLoading } display="inline-block" color="gray.1000">
           { data.size.toLocaleString() }
         </Skeleton>
       </Td>
@@ -93,7 +93,7 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
       <Td isNumeric fontSize="sm">
         { data.transaction_count > 0 ? (
           <Skeleton isLoaded={ !isLoading } display="inline-block">
-            <LinkInternal href={ route({
+            <LinkInternal color="green.500" href={ route({
               pathname: '/block/[height_or_hash]',
               query: { height_or_hash: String(data.height), tab: 'txs' },
             }) }>
@@ -123,7 +123,7 @@ const BlocksTableItem = ({ data, isLoading, enableTimeIncrement }: Props) => {
       { !isRollup && !config.UI.views.block.hiddenFields?.burnt_fees && (
         <Td fontSize="sm">
           <Flex alignItems="center" columnGap={ 2 }>
-            <IconSvg name="flame" boxSize={ 5 } color={ burntFeesIconColor } isLoading={ isLoading }/>
+            { /* <IconSvg name="flame" boxSize={ 5 } color={ burntFeesIconColor } isLoading={ isLoading }/> */ }
             <Skeleton isLoaded={ !isLoading } display="inline-block">
               { burntFees.dividedBy(WEI).toFixed(8) }
             </Skeleton>

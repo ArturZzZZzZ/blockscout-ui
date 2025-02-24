@@ -14,7 +14,7 @@ type Props = {
 const DetailsTimestamp = ({ timestamp, isLoading }: Props) => {
   return (
     <>
-      <IconSvg name="clock" boxSize={ 5 } color="gray.500" isLoading={ isLoading }/>
+      <IconSvg name="clock" boxSize={ 5 } color="white" isLoading={ isLoading }/>
       <Skeleton isLoaded={ !isLoading } ml={ 2 }>
         { dayjs(timestamp).fromNow() }
       </Skeleton>

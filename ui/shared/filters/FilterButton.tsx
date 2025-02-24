@@ -17,7 +17,7 @@ interface Props {
 
 const FilterButton = ({ isActive, isLoading, appliedFiltersNum, onClick, as }: Props, ref: React.ForwardedRef<HTMLButtonElement>) => {
   const badgeColor = useColorModeValue('white', 'black');
-  const badgeBgColor = useColorModeValue('blue.700', 'gray.50');
+  const badgeBgColor = useColorModeValue('blue.700', 'green.500');
 
   if (isLoading) {
     return <Skeleton w={{ base: 9, lg: '78px' }} h={ 8 } borderRadius="base" flexShrink={ 0 }/>;
@@ -26,7 +26,7 @@ const FilterButton = ({ isActive, isLoading, appliedFiltersNum, onClick, as }: P
   const num = (
     <Circle
       className="AppliedFiltersNum"
-      bg={ isActive ? 'link_hovered' : badgeBgColor }
+      bg={ isActive ? 'green.500' : badgeBgColor }
       size={ 5 }
       color={ badgeColor }
     >
@@ -38,10 +38,11 @@ const FilterButton = ({ isActive, isLoading, appliedFiltersNum, onClick, as }: P
     <Button
       ref={ ref }
       rightIcon={ appliedFiltersNum ? num : undefined }
+      border="none"
       size="sm"
       fontWeight="500"
       variant="outline"
-      colorScheme="gray"
+      color="green.500"
       onClick={ onClick }
       isActive={ isActive }
       data-selected={ Boolean(appliedFiltersNum) }

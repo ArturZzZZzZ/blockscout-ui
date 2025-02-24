@@ -252,7 +252,7 @@ export default function useNavItems(): ReturnType {
     const mainNavItems: ReturnType['mainNavItems'] = [
       {
         text: 'Blockchain',
-        icon: 'globe-b',
+        icon: 'earth',
         isActive: blockchainNavItems.flat().some(item => isInternalItem(item) && item.isActive),
         subItems: blockchainNavItems,
       },

@@ -39,6 +39,7 @@ const TagGroupSelect = <T extends string>({ items, value, isMulti, onChange, tag
         const isSelected = isMulti ? value.includes(item.id) : value === item.id;
         return (
           <Tag
+            h="40px"
             variant="select"
             key={ item.id }
             data-id={ item.id }
@@ -48,6 +49,7 @@ const TagGroupSelect = <T extends string>({ items, value, isMulti, onChange, tag
             size={ tagSize }
             display="inline-flex"
             justifyContent="center"
+            borderRadius="12px"
           >
             { item.title }
           </Tag>

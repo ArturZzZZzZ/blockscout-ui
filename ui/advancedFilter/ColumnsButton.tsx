@@ -36,7 +36,7 @@ const ColumnsButton = ({ columns, onChange }: Props) => {
         <Button
           onClick={ onToggle }
           variant="outline"
-          colorScheme="gray"
+          colorScheme="green"
           size="sm"
           leftIcon={ <IconSvg name="columns" boxSize={ 5 } color="inherit"/> }
         >

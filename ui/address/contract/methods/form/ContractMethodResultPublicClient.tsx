@@ -14,7 +14,7 @@ export interface Props {
 }
 
 const ContractMethodResultPublicClient = ({ data, abiItem, onSettle, mode: modeProps }: Props) => {
-  const bgColor = useColorModeValue('blackAlpha.50', 'whiteAlpha.50');
+  const bgColor = useColorModeValue('blackAlpha.50', 'gray.1200');
 
   React.useEffect(() => {
     if (modeProps === 'result') {

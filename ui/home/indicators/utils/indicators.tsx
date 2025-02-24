@@ -28,7 +28,7 @@ const dailyTxsIndicator: TChainIndicator<'stats_charts_txs'> = {
   hint: `Number of transactions yesterday (0:00 - 23:59 UTC). The chart displays daily transactions for the past 30 days.`,
   api: {
     resourceName: 'stats_charts_txs',
-    dataFn: (response) => ([ {
+    dataFn: (response) => (([ {
       items: response.chart_data
         .map((item) => ({ date: new Date(item.date), value: item.transaction_count }))
         .sort(sortByDateDesc)
@@ -36,7 +36,7 @@ const dailyTxsIndicator: TChainIndicator<'stats_charts_txs'> = {
         .map(mapNullToZero),
       name: 'Tx/day',
       valueFormatter: (x: number) => x.toLocaleString(undefined, { maximumFractionDigits: 2, notation: 'compact' }),
-    } ]),
+    } ])),
   },
 };
 

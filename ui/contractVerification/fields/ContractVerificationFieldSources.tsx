@@ -1,4 +1,4 @@
-import { Text, Button, Box, Flex } from '@chakra-ui/react';
+import { Text, Button, Box, Flex, chakra } from '@chakra-ui/react';
 import React from 'react';
 import type { ControllerRenderProps, FieldPathValue, ValidateResult } from 'react-hook-form';
 import { Controller, useFormContext } from 'react-hook-form';
@@ -173,7 +173,7 @@ const ContractVerificationFieldSources = ({ fileTypes, multiple, required, title
         render={ renderControl }
         rules={ rules }
       />
-      { hint ? <span>{ hint }</span> : null }
+      { hint ? <chakra.span color="gray.1000">{ hint }</chakra.span> : null }
     </ContractVerificationFormRow>
   );
 };

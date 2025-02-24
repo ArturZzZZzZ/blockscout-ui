@@ -4,19 +4,19 @@ import { runIfFn } from '@chakra-ui/utils';
 
 import config from 'configs/app';
 
-const variantSolid = defineStyle((props) => {
-  const { colorScheme: c } = props;
+const variantSolid = defineStyle(() => {
 
-  const bg = `${ c }.600`;
-  const color = 'white';
-  const hoverBg = `${ c }.400`;
-  const activeBg = hoverBg;
+  const bg = `green.500`;
+  const color = '#000';
+  const hoverBg = bg;
+  const activeBg = bg;
 
   return {
     bg,
     color,
     _hover: {
       bg: hoverBg,
+      opacity: 0.8,
       _disabled: {
         bg,
       },
@@ -38,11 +38,11 @@ const variantOutline = defineStyle((props) => {
 
   const bg = 'transparent';
 
-  const color = isGrayTheme ? mode('blackAlpha.800', 'whiteAlpha.800')(props) : mode(`${ c }.600`, `${ c }.300`)(props);
-  const borderColor = isGrayTheme ? mode('gray.200', 'gray.600')(props) : mode(`${ c }.600`, `${ c }.300`)(props);
+  const color = isGrayTheme ? mode('blackAlpha.800', 'whiteAlpha.800')(props) : 'green.500';
+  const borderColor = isGrayTheme ? mode('gray.200', 'gray.600')(props) : 'green.500';
 
-  const selectedBg = isGrayTheme ? mode('blue.50', 'gray.600')(props) : mode(`${ c }.50`, 'gray.600')(props);
-  const selectedColor = mode('blue.600', 'gray.50')(props);
+  const selectedBg = isGrayTheme ? mode('blue.50', 'gray.600')(props) : mode(`${ c }.50`, '#001917')(props);
+  const selectedColor = mode('blue.600', 'green.500')(props);
 
   return {
     color,
@@ -96,21 +96,23 @@ const variantOutline = defineStyle((props) => {
 
 const variantRadioGroup = defineStyle((props) => {
   const outline = runIfFn(variantOutline, props);
-  const bgColor = mode('blue.50', 'gray.800')(props);
-  const selectedTextColor = mode('blue.700', 'gray.50')(props);
+  const bgColor = mode('blue.50', 'transparent')(props);
+  const selectedTextColor = mode('blue.700', 'green.500')(props);
 
   return {
     ...outline,
+    borderWidth: '1px',
     fontWeight: 500,
     cursor: 'pointer',
     bgColor: 'none',
     borderColor: bgColor,
+    color: 'white',
     _hover: {
       borderColor: bgColor,
       color: 'link_hovered',
     },
     _active: {
-      bgColor: 'none',
+      bgColor: 'green.500',
     },
     _notFirst: {
       borderLeftWidth: 0,
@@ -123,8 +125,8 @@ const variantRadioGroup = defineStyle((props) => {
       &[data-selected=true][aria-selected=true]
     `]: {
       cursor: 'initial',
-      bgColor,
-      borderColor: bgColor,
+      bgColor: 'green.700',
+      // borderColor: bgColor,
       color: selectedTextColor,
       _hover: {
         color: selectedTextColor,
@@ -197,26 +199,26 @@ const variantHero = defineStyle((props) => {
   return {
     bg: mode(
       buttonConfig?._default?.background?.[0] || 'blue.600',
-      buttonConfig?._default?.background?.[1] || buttonConfig?._default?.background?.[0] || 'blue.600',
+      buttonConfig?._default?.background?.[1] || buttonConfig?._default?.background?.[0] || 'green.500',
     )(props),
     color: mode(
-      buttonConfig?._default?.text_color?.[0] || 'white',
-      buttonConfig?._default?.text_color?.[1] || buttonConfig?._default?.text_color?.[0] || 'white',
+      buttonConfig?._default?.text_color?.[0] || 'black',
+      'black',
     )(props),
     _hover: {
       bg: mode(
-        buttonConfig?._hover?.background?.[0] || 'blue.400',
-        buttonConfig?._hover?.background?.[1] || buttonConfig?._hover?.background?.[0] || 'blue.400',
+        buttonConfig?._hover?.background?.[0] || 'black',
+        buttonConfig?._hover?.background?.[1] || buttonConfig?._hover?.background?.[0] || 'green.500',
       )(props),
       color: mode(
-        buttonConfig?._hover?.text_color?.[0] || 'white',
-        buttonConfig?._hover?.text_color?.[1] || buttonConfig?._hover?.text_color?.[0] || 'white',
+        buttonConfig?._hover?.text_color?.[0] || 'black',
+        'black',
       )(props),
     },
     '&[data-selected=true]': {
       bg: mode(
         buttonConfig?._selected?.background?.[0] || 'blue.50',
-        buttonConfig?._selected?.background?.[1] || buttonConfig?._selected?.background?.[0] || 'blue.50',
+        buttonConfig?._selected?.background?.[1] || buttonConfig?._selected?.background?.[0] || 'green.500',
       )(props),
       color: mode(
         buttonConfig?._selected?.text_color?.[0] || 'blackAlpha.800',

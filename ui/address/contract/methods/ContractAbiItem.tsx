@@ -89,14 +89,14 @@ const ContractAbiItem = ({ data, index, id, addressHash, sourceAddress, tab, onS
                   />
                 ) }
               </Box>
-              <Tag colorScheme={ isRead ? 'black-purple' : 'black-blue' } flexShrink={ 0 }>{ isRead ? 'read' : 'write' }</Tag>
+              <Tag bg="#282828" color={ isRead ? '#C293FF' : '#95BEFD' } flexShrink={ 0 }>{ isRead ? 'read' : 'write' }</Tag>
               { 'method_id' in data && (
-                <Tag display="inline-flex" alignItems="center" flexShrink={ 0 }>
+                <Tag bg="#282828" color="white" borderRadius="4px" display="inline-flex" alignItems="center" flexShrink={ 0 }>
                   { data.method_id }
                   <CopyToClipboard text={ data.method_id }/>
                 </Tag>
               ) }
-              <AccordionIcon transform={ isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)' } color="gray.500"/>
+              <AccordionIcon transform={ isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)' } color="#gray.1000"/>
             </AccordionButton>
           </Element>
           <AccordionPanel pb={ 4 } pr={ 0 } pl="28px" w="calc(100% - 6px)">

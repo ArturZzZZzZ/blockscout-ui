@@ -20,10 +20,10 @@ const FormInputPlaceholder = ({ text, icon, error, isFancy }: Props) => {
     <FormLabel
       alignItems="center"
       { ...(isFancy ? { 'data-fancy': true } : {}) }
-      variant="floating"
+      // variant="floating"
     >
       { icon }
-      <chakra.span>{ text }</chakra.span>
+      <chakra.span color="gray.1000">{ text }</chakra.span>
       { errorMessage && (
         <chakra.span order={ 3 } whiteSpace="pre">
           { ' ' }

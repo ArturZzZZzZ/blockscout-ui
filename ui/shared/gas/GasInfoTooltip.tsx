@@ -36,7 +36,7 @@ interface Props {
 const feature = config.features.gasTracker;
 
 const GasInfoTooltip = ({ children, data, dataUpdatedAt, isOpen, placement }: Props) => {
-  const tooltipBg = useColorModeValue('gray.700', 'gray.900');
+  const tooltipBg = useColorModeValue('gray.700', 'gray.1200');
 
   if (!data.gas_prices) {
     return null;
@@ -73,7 +73,7 @@ const GasInfoTooltip = ({ children, data, dataUpdatedAt, isOpen, placement }: Pr
                   <GasInfoTooltipRow name="Normal" info={ data.gas_prices.average }/>
                   <GasInfoTooltipRow name="Slow" info={ data.gas_prices.slow }/>
                 </Grid>
-                <LinkInternal href={ route({ pathname: '/gas-tracker' }) }>
+                <LinkInternal color="green.500" href={ route({ pathname: '/gas-tracker' }) }>
                   Gas tracker overview
                 </LinkInternal>
               </Flex>

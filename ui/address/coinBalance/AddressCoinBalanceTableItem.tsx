@@ -47,12 +47,12 @@ const AddressCoinBalanceTableItem = (props: Props) => {
           timestamp={ props.block_timestamp }
           enableIncrement={ props.page === 1 }
           isLoading={ props.isLoading }
-          color="text_secondary"
+          color="white"
           display="inline-block"
         />
       </Td>
       <Td isNumeric pr={ 1 }>
-        <Skeleton isLoaded={ !props.isLoading } color="text_secondary" display="inline-block">
+        <Skeleton isLoaded={ !props.isLoading } color="white" display="inline-block">
           <span>{ BigNumber(props.value).div(WEI).dp(8).toFormat() }</span>
         </Skeleton>
       </Td>

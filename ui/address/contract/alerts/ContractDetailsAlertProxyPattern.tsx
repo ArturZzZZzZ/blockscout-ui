@@ -9,11 +9,11 @@ interface Props {
   type: NonNullable<SmartContractProxyType>;
 }
 
-const PROXY_TYPES: Partial<Record<NonNullable<SmartContractProxyType>, {
+const PROXY_TYPES: Record<NonNullable<SmartContractProxyType>, {
   name: string;
   link?: string;
   description?: string;
-}>> = {
+}> = {
   eip1167: {
     name: 'EIP-1167',
     link: 'https://eips.ethereum.org/EIPS/eip-1167',
@@ -70,10 +70,10 @@ const ContractCodeProxyPattern = ({ type }: Props) => {
   }
 
   return (
-    <Alert status="warning" flexWrap="wrap" whiteSpace="pre-wrap">
+    <Alert bg="gray.1200" flexWrap="wrap" whiteSpace="pre-wrap">
       { proxyInfo.link ? (
         <>
-          This proxy smart-contract is detected via <LinkExternal href={ proxyInfo.link }>{ proxyInfo.name }</LinkExternal>
+          This proxy smart-contract is detected via <LinkExternal color="green.500" href={ proxyInfo.link }>{ proxyInfo.name }</LinkExternal>
           { proxyInfo.description && ` - ${ proxyInfo.description }` }
         </>
       ) : (

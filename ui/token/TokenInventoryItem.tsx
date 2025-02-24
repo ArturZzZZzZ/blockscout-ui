@@ -39,6 +39,7 @@ const TokenInventoryItem = ({ item, token, isLoading }: Props) => {
       fontSize="sm"
       fontWeight={ 500 }
       lineHeight="20px"
+      bg="gray.1200"
     >
       <Link href={ isLoading ? undefined : url }>
         { mediaElement }

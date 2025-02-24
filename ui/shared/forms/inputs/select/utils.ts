@@ -30,7 +30,7 @@ function getSingleValueStyles(size?: Size) {
     case 'sm':
     case 'md': {
       return {
-        top: '26px',
+        top: '20px',
       };
     }
     case 'lg': {
@@ -50,7 +50,9 @@ const getChakraStyles: (colorMode: ColorMode) => ChakraStylesConfig<Option> = (c
   return {
     control: (provided, state) => ({
       ...provided,
-      borderColor: state.hasValue ? formColor.input.filled.borderColor : formColor.input.empty.borderColor,
+      // eslint-disable-next-line no-nested-ternary
+      borderColor: state.menuIsOpen ? 'green.500!important' : state.hasValue ? formColor.input.filled.borderColor : formColor.input.empty.borderColor,
+      borderRadius: '16px',
     }),
     inputContainer: (provided) => ({
       ...provided,
@@ -68,6 +70,15 @@ const getChakraStyles: (colorMode: ColorMode) => ChakraStylesConfig<Option> = (c
       transform: 'none',
       ...getSingleValueStyles(state.selectProps.size),
     }),
+    menuList: (provided) => ({ ...provided, bg: 'gray.1200', borderRadius: '12px', border: '1px solid', borderColor: 'gray.1400' }),
+    option: (provided, state) => {
+
+      return { ...provided,
+        bg: state.isSelected ? '#112B29' : 'gray.1200',
+        color: state.isSelected ? 'green.500' : 'gray.1100',
+        cursor: 'pointer', borderRadius: '12px',
+        _hover: { bg: 'gray.1300', color: 'green.500' } };
+    },
   };
 };
 

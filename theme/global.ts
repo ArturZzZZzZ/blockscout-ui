@@ -24,6 +24,7 @@ const global = (props: StyleFunctionProps) => ({
   form: {
     w: '100%',
   },
+  '.gray-tooltip span': { color: 'gray.1400' },
   ...scrollbar(props),
   ...addressEntity(props),
   ...recaptcha(),

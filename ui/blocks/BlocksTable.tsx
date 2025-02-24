@@ -41,8 +41,8 @@ const BlocksTable = ({ data, isLoading, top, page, showSocketInfo, socketInfoNum
   return (
     <AddressHighlightProvider>
       <Table minWidth="1040px" fontWeight={ 500 }>
-        <Thead top={ top }>
-          <Tr>
+        <Thead top={ top } sx={{ th: { color: 'white' } }}>
+          <Tr bg="gray.1200" opacity="0.3">
             <Th width="150px">Block</Th>
             <Th width="120px">Size, bytes</Th>
             { !config.UI.views.block.hiddenFields?.miner &&

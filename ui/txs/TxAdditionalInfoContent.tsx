@@ -23,14 +23,14 @@ const TxAdditionalInfoContent = ({ tx }: { tx: Transaction }) => {
   };
 
   const sectionTitleProps = {
-    color: 'gray.500',
+    color: 'gray.1100',
     fontWeight: 600,
     marginBottom: 3,
   };
 
   return (
     <>
-      <Heading as="h4" size="sm" mb={ 6 }>Additional info </Heading>
+      <Heading as="h4" size="sm" mb={ 6 } color="green.500">Additional info </Heading>
       { tx.blob_versioned_hashes && tx.blob_versioned_hashes.length > 0 && (
         <Box { ...sectionProps } mb={ 4 }>
           <Flex alignItems="center" justifyContent="space-between">
@@ -105,7 +105,7 @@ const TxAdditionalInfoContent = ({ tx }: { tx: Transaction }) => {
           <Box>
             <Text as="span" fontWeight="500">Txn type: </Text>
             <Text fontWeight="600" as="span">{ tx.type }</Text>
-            { tx.type === 2 && <Text fontWeight="400" as="span" ml={ 1 } color="gray.500">(EIP-1559)</Text> }
+            { tx.type === 2 && <Text fontWeight="400" as="span" ml={ 1 } color="gray.1100">(EIP-1559)</Text> }
           </Box>
           <Box mt={ 1 }>
             <Text as="span" fontWeight="500">Nonce: </Text>
@@ -117,7 +117,7 @@ const TxAdditionalInfoContent = ({ tx }: { tx: Transaction }) => {
           </Box>
         </Box>
       ) }
-      <LinkInternal href={ route({ pathname: '/tx/[hash]', query: { hash: tx.hash } }) }>More details</LinkInternal>
+      <LinkInternal color="green.500" href={ route({ pathname: '/tx/[hash]', query: { hash: tx.hash } }) }>More details</LinkInternal>
     </>
   );
 };

@@ -112,12 +112,12 @@ const TokenTransferTableItem = ({
       </Td>
       <Td isNumeric verticalAlign="top">
         { valueStr && (
-          <Skeleton isLoaded={ !isLoading } display="inline-block" mt="7px" wordBreak="break-all">
+          <Skeleton isLoaded={ !isLoading } display="inline-block" mt="7px" wordBreak="break-all" color="white">
             { valueStr }
           </Skeleton>
         ) }
         { usd && (
-          <Skeleton isLoaded={ !isLoading } color="text_secondary" mt="10px" ml="auto" w="min-content">
+          <Skeleton isLoaded={ !isLoading } color="gray.1000" mt="10px" ml="auto" w="min-content">
             <span>${ usd }</span>
           </Skeleton>
         ) }

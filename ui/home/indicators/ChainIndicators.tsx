@@ -39,7 +39,7 @@ const ChainIndicators = () => {
     },
   });
 
-  const bgColor = useColorModeValue('gray.50', 'whiteAlpha.100');
+  const bgColor = useColorModeValue('gray.50', 'gray.1200');
 
   if (indicators.length === 0) {
     return null;
@@ -55,7 +55,7 @@ const ChainIndicators = () => {
     }
 
     return (
-      <Text fontWeight={ 700 } fontSize="30px" lineHeight="36px">
+      <Text fontWeight={ 400 } fontSize="30px" lineHeight="36px" color="white">
         { indicator?.value(statsQueryResult.data) }
       </Text>
     );
@@ -95,7 +95,7 @@ const ChainIndicators = () => {
     >
       <Flex flexGrow={ 1 } flexDir="column">
         <Flex alignItems="center">
-          <Text fontWeight={ 500 }>{ indicator?.title }</Text>
+          <Text fontWeight={ 500 } color="gray.1100">{ indicator?.title }</Text>
           { indicator?.hint && <Hint label={ indicator.hint } ml={ 1 }/> }
         </Flex>
         <Flex mb={{ base: 0, lg: 2 }} mt={ 1 } alignItems="end">

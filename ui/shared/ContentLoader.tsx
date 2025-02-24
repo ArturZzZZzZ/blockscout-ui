@@ -27,11 +27,11 @@ const ContentLoader = ({ className, text }: Props) => {
           animation: `${ runnerAnimation } 700ms ease-in-out infinite alternate`,
           left: '100%',
           top: 0,
-          backgroundColor: 'blue.300',
+          backgroundColor: 'green.500',
           borderRadius: 'full',
         }}
       />
-      <Text mt={ 6 } variant="secondary">
+      <Text mt={ 6 } color="gray.1000">
         { text || 'Loading data, please wait...' }
       </Text>
     </Box>

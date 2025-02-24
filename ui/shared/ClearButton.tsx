@@ -21,6 +21,8 @@ const ClearButton = ({ onClick, isDisabled, className }: Props) => {
       aria-label="Clear input"
       title="Clear input"
       boxSize={ 6 }
+      bg="transparent"
+      _hover={{ bg: 'transparent' }}
       icon={ <IconSvg name="status/error" boxSize={ 3 } color={ iconColor } _hover={{ color: iconColorHover }}/> }
       size="sm"
       onClick={ onClick }

@@ -9,8 +9,8 @@ interface Props {
 const ItemLabel = ({ abiParameter }: Props) => {
   return (
     <>
-      { abiParameter.name && <chakra.span fontWeight={ 500 }>{ abiParameter.name } </chakra.span> }
-      <span>({ abiParameter.type }) : </span>
+      { abiParameter.name && <chakra.span color="white" fontWeight={ 500 }>{ abiParameter.name } </chakra.span> }
+      <chakra.span color="white">({ abiParameter.type }) : </chakra.span>
     </>
   );
 };

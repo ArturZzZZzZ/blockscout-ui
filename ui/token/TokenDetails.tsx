@@ -66,7 +66,7 @@ const TokenDetails = ({ tokenQuery }: Props) => {
 
     return (
       <Skeleton isLoaded={ !tokenCountersQuery.isPlaceholderData }>
-        <Link onClick={ changeUrlAndScroll(tab) }>
+        <Link color="green.500" onClick={ changeUrlAndScroll(tab) }>
           { Number(itemValue).toLocaleString() }
         </Link>
       </Skeleton>

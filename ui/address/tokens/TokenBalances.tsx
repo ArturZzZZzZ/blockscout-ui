@@ -53,21 +53,21 @@ const TokenBalances = () => {
         name="Net Worth"
         value={ addressData?.exchange_rate ? `${ prefix }$${ totalUsd.toFormat(2) }` : 'N/A' }
         isLoading={ addressQuery.isPending || tokenQuery.isPending }
-        icon={ <IconSvg name="wallet" boxSize="20px" flexShrink={ 0 } color="text_secondary"/> }
+        icon={ <IconSvg name="wallet" boxSize="20px" flexShrink={ 0 } color="gray.1000"/> }
       />
       <TokenBalancesItem
         name={ `${ currencyUnits.ether } Balance` }
         value={ `${ nativeValue } ${ currencyUnits.ether }` }
         valueSecondary={ !nativeUsd.eq(ZERO) ? `$${ nativeUsd.toFormat(2) }` : '' }
         isLoading={ addressQuery.isPending || tokenQuery.isPending }
-        icon={ <NativeTokenIcon boxSize="20px"/> }
+        icon={ <NativeTokenIcon color="gray.1000" boxSize="20px"/> }
       />
       <TokenBalancesItem
         name="Tokens"
         value={ tokensNumText }
         valueSecondary={ `${ prefix }$${ tokensInfo.usd.toFormat(2) }` }
         isLoading={ addressQuery.isPending || tokenQuery.isPending }
-        icon={ <IconSvg name="tokens" boxSize="20px" flexShrink={ 0 } color="text_secondary"/> }
+        icon={ <IconSvg name="tokens" boxSize="20px" flexShrink={ 0 } color="gray.1000"/> }
       />
     </Flex>
   );

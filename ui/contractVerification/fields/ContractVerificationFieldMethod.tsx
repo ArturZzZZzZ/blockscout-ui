@@ -29,7 +29,7 @@ interface Props {
 }
 
 const ContractVerificationFieldMethod = ({ methods }: Props) => {
-  const tooltipBg = useColorModeValue('gray.700', 'gray.900');
+  const tooltipBg = useColorModeValue('gray.700', '#131414');
   const isMobile = useIsMobile();
 
   const options = React.useMemo(() => methods.map((method) => ({
@@ -44,12 +44,13 @@ const ContractVerificationFieldMethod = ({ methods }: Props) => {
       case 'multi-part':
         return <ListItem key={ method }>Verification of multi-part Solidity files.</ListItem>;
       case 'sourcify':
-        return <ListItem key={ method }>Verification through <Link href="https://sourcify.dev/" target="_blank">Sourcify</Link>.</ListItem>;
+        return <ListItem key={ method }>Verification through <Link color="green.500" href="https://sourcify.dev/" target="_blank">Sourcify</Link>.</ListItem>;
       case 'standard-input':
         return (
           <ListItem key={ method }>
             <span>Verification using </span>
             <Link
+              color="green.500"
               href="https://docs.soliditylang.org/en/latest/using-the-compiler.html#input-description"
               target="_blank"
             >
@@ -67,6 +68,7 @@ const ContractVerificationFieldMethod = ({ methods }: Props) => {
           <ListItem key={ method }>
             <span>Verification of Vyper contract using </span>
             <Link
+              color="green.500"
               href="https://docs.vyperlang.org/en/stable/compiling-a-contract.html#compiler-input-and-output-json-description"
               target="_blank"
             >
@@ -92,14 +94,14 @@ const ContractVerificationFieldMethod = ({ methods }: Props) => {
         </chakra.span>
         <Popover trigger="hover" isLazy placement={ isMobile ? 'bottom-end' : 'right-start' } offset={ [ -8, 8 ] }>
           <PopoverTrigger>
-            <chakra.span display="inline-block" ml={ 1 } cursor="pointer" verticalAlign="middle" h="22px">
-              <IconSvg name="info" boxSize={ 5 } color="icon_info" _hover={{ color: 'link_hovered' }}/>
+            <chakra.span display="inline-block" ml={ 4 } cursor="pointer" verticalAlign="middle" h="22px">
+              <IconSvg name="info" boxSize={ 5 } color="gray.1000" _hover={{ color: 'green.500' }}/>
             </chakra.span>
           </PopoverTrigger>
           <Portal>
             <PopoverContent bgColor={ tooltipBg } w={{ base: '300px', lg: '380px' }}>
               <PopoverArrow bgColor={ tooltipBg }/>
-              <PopoverBody color="white">
+              <PopoverBody color="gray.1000">
                 <DarkMode>
                   <span>Currently, Blockscout supports { methods.length } methods:</span>
                   <OrderedList>
@@ -113,7 +115,8 @@ const ContractVerificationFieldMethod = ({ methods }: Props) => {
       </Box>
       <FormFieldFancySelect<FormFields, 'method'>
         name="method"
-        placeholder="Verification method (compiler type)"
+        placeholder="Verification method"
+        label="Verification method (compiler type)"
         options={ options }
         isRequired
         isAsync={ false }

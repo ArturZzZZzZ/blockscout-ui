@@ -34,7 +34,7 @@ const BlockGasUsed = ({ className, gasUsed, gasLimit, gasTarget, isLoading }: Pr
       <Tooltip label={ isLoading ? undefined : 'Gas Used %' }>
         <Box>
           <Utilization
-            colorScheme="gray"
+            colorScheme="green"
             value={ BigNumber(gasUsed).dividedBy(BigNumber(gasLimit)).toNumber() }
             isLoading={ isLoading }
             className={ className }

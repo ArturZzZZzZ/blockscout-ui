@@ -20,7 +20,7 @@ const ContractMethodAddressButton = ({ onClick, isDisabled }: Props) => {
       <Button
         variant="subtle"
         colorScheme="gray"
-        size="xs"
+        h="34px"
         fontSize="normal"
         fontWeight={ 500 }
         ml={ 1 }

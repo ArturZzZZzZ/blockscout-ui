@@ -55,6 +55,7 @@ const EntityTag = ({ data, isLoading, maxW, noLink }: Props) => {
   return (
     <EntityTagPopover data={ data }>
       <Tag
+        borderRadius="4px"
         display="flex"
         alignItems="center"
         minW={ 0 }

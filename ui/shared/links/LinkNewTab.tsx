@@ -10,7 +10,7 @@ interface Props {
 }
 
 const LinkNewTab = ({ className, label, href }: Props) => {
-  const iconColor = useColorModeValue('gray.400', 'gray.500');
+  const iconColor = useColorModeValue('gray.400', 'gray.1000');
 
   return (
     <Tooltip label={ label }>

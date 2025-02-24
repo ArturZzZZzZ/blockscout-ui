@@ -1,3 +1,4 @@
+import { chakra } from '@chakra-ui/react';
 import React from 'react';
 
 import type { FormFields } from '../types';
@@ -21,7 +22,9 @@ const ContractVerificationFieldCode = ({ isVyper }: Props) => {
         asComponent="Textarea"
       />
       { isVyper ? null : (
-        <span>If your code utilizes a library or inherits dependencies, we recommend using other verification methods instead.</span>
+        <chakra.span color="gray.1000">If your code utilizes a library or
+          inherits dependencies, we recommend using other verification methods instead.
+        </chakra.span>
       ) }
     </ContractVerificationFormRow>
   );

@@ -26,14 +26,15 @@ const TableColumnFilter = ({ title, isFilled, isTouched, hasReset, onFilter, onR
   return (
     <>
       <Flex alignItems="center" justifyContent="space-between">
-        <Text color="text_secondary" fontWeight="600">{ title }</Text>
+        <Text color="white" fontWeight="600">{ title }</Text>
         { hasReset && (
           <Link
             onClick={ onReset }
             cursor={ isFilled ? 'pointer' : 'unset' }
             opacity={ isFilled ? 1 : 0.2 }
+            color="green.500"
             _hover={{
-              color: isFilled ? 'link_hovered' : 'none',
+              color: isFilled ? 'green.500' : 'none',
             }}
           >
             Reset

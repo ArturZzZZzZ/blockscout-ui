@@ -12,9 +12,10 @@ interface Props {
 const ContractDetailsAlertVerificationSource = ({ data }: Props) => {
   if (data?.is_verified_via_eth_bytecode_db) {
     return (
-      <Alert status="warning" whiteSpace="pre-wrap" flexWrap="wrap">
+      <Alert bg="gray.1200" status="warning" whiteSpace="pre-wrap" flexWrap="wrap">
         <span>This contract has been { data.is_partially_verified ? 'partially ' : '' }verified using </span>
         <LinkExternal
+          color="green.500"
           href="https://docs.blockscout.com/about/features/ethereum-bytecode-database-microservice"
           fontSize="md"
         >
@@ -26,7 +27,7 @@ const ContractDetailsAlertVerificationSource = ({ data }: Props) => {
 
   if (data?.is_verified_via_sourcify) {
     return (
-      <Alert status="warning" whiteSpace="pre-wrap" flexWrap="wrap">
+      <Alert bg="gray.1200" status="warning" whiteSpace="pre-wrap" flexWrap="wrap">
         <span>This contract has been { data.is_partially_verified ? 'partially ' : '' }verified via Sourcify. </span>
         { data.sourcify_repo_url && <LinkExternal href={ data.sourcify_repo_url } fontSize="md">View contract in Sourcify repository</LinkExternal> }
       </Alert>

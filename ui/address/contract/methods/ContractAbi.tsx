@@ -54,13 +54,13 @@ const ContractAbi = ({ abi, addressHash, sourceAddress, tab, visibleItems }: Pro
   return (
     <div>
       <Flex mb={ 3 }>
-        <Box fontWeight={ 500 } mr="auto">Contract information</Box>
+        <Box fontWeight={ 500 } mr="auto">Contract informations</Box>
         { abi.length > 1 && (
-          <Link onClick={ handleExpandAll }>
+          <Link color="green.500" onClick={ handleExpandAll }>
             { expandedSections.length === abi.length ? 'Collapse' : 'Expand' } all
           </Link>
         ) }
-        <Link onClick={ handleReset } ml={ 3 }>Reset</Link>
+        <Link color="green.500" onClick={ handleReset } ml={ 3 }>Reset</Link>
       </Flex>
       <Accordion allowMultiple position="relative" onChange={ handleAccordionStateChange } index={ expandedSections }>
         { abi.map((item, index) => (

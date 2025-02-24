@@ -10,7 +10,7 @@ const NftFallback = ({ className }: { className?: string }) => {
       name="nft_shield"
       p="50px"
       color={ useColorModeValue('blackAlpha.500', 'whiteAlpha.500') }
-      bgColor={ useColorModeValue('blackAlpha.50', 'whiteAlpha.50') }
+      bgColor={ useColorModeValue('blackAlpha.50', '#262626') }
     />
   );
 };

@@ -1,20 +1,23 @@
 import { Grid } from '@chakra-ui/react';
 import React from 'react';
 
+import config from 'configs/app';
 import useApiQuery from 'lib/api/useApiQuery';
 import { STATS_COUNTER } from 'stubs/stats';
 import StatsWidget from 'ui/shared/stats/StatsWidget';
 
 import DataFetchAlert from '../shared/DataFetchAlert';
+import { replaceValue } from './utils';
 
 const UNITS_WITHOUT_SPACE = [ 's' ];
 
 const NumberWidgetsList = () => {
-  const { data, isPlaceholderData, isError } = useApiQuery('stats_counters', {
+  const { data: oldData, isPlaceholderData, isError } = useApiQuery('stats_counters', {
     queryOptions: {
       placeholderData: { counters: Array(10).fill(STATS_COUNTER) },
     },
   });
+  const data = replaceValue(oldData, 'ETH', config.chain.shortName ?? 'ADI');
 
   if (isError) {
     return <DataFetchAlert/>;

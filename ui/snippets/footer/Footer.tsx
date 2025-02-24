@@ -77,7 +77,7 @@ const Footer = () => {
 
   const frontendLink = (() => {
     if (config.UI.footer.frontendVersion) {
-      return <Link href={ FRONT_VERSION_URL } target="_blank">{ config.UI.footer.frontendVersion }</Link>;
+      return <Link href={ FRONT_VERSION_URL } target="_blank" color="green.500">{ config.UI.footer.frontendVersion }</Link>;
     }
 
     if (config.UI.footer.frontendCommit) {
@@ -118,7 +118,7 @@ const Footer = () => {
   const renderProjectInfo = React.useCallback((gridArea?: GridProps['gridArea']) => {
     return (
       <Box gridArea={ gridArea }>
-        <Flex columnGap={ 2 } fontSize="xs" lineHeight={ 5 } alignItems="center" color="text">
+        <Flex columnGap={ 2 } fontSize="xs" lineHeight={ 5 } alignItems="center" color="white">
           <span>Made with</span>
           <Link href="https://www.blockscout.com" isExternal display="inline-flex" color={ logoColor } _hover={{ color: logoColor }}>
             <IconSvg
@@ -128,21 +128,21 @@ const Footer = () => {
             />
           </Link>
         </Flex>
-        <Text mt={ 3 } fontSize="xs">
-          Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.
+        <Text mt={ 3 } fontSize="xs" color="white">
+          Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for ADI Networks.
         </Text>
         <Box mt={ 6 } alignItems="start" fontSize="xs" lineHeight={ 5 }>
           { apiVersionUrl && (
-            <Text>
-              Backend: <Link href={ apiVersionUrl } target="_blank">{ backendVersionData?.backend_version }</Link>
+            <Text color="white">
+              Backend: <Link href={ apiVersionUrl } target="_blank" color="green.500">{ backendVersionData?.backend_version }</Link>
             </Text>
           ) }
           { frontendLink && (
-            <Text>
+            <Text color="white">
               Frontend: { frontendLink }
             </Text>
           ) }
-          <Text>
+          <Text color="white">
             Copyright { copy } Blockscout Limited 2023-{ (new Date()).getFullYear() }
           </Text>
         </Box>
@@ -154,6 +154,7 @@ const Footer = () => {
     as: 'footer',
     borderTopWidth: '1px',
     borderTopColor: 'solid',
+    bg: 'gray.1200',
   };
 
   const contentProps: GridProps = {
@@ -245,12 +246,10 @@ const Footer = () => {
           gridTemplateColumns={{
             base: 'repeat(auto-fill, 160px)',
             lg: 'repeat(2, 160px)',
-            xl: 'repeat(3, 160px)',
           }}
           gridTemplateRows={{
             base: 'auto',
             lg: 'repeat(3, auto)',
-            xl: 'repeat(2, auto)',
           }}
           gridAutoFlow={{ base: 'row', lg: 'column' }}
           alignContent="start"
